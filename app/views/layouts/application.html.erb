@@ -6,9 +6,45 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="body">
+	<div class="navbar navbar-fixed-top">
+		<div class="main">
+			<div class="left">
+				<a href="#" class="nav-offpage-left"><%= image_tag("menu.png") %></a>
+				<a class="navbar-brand" href="/"><%= image_tag("quilt.png") %></a>
+			</div>
+			<div class="right">
+				<i class="icon-paperplane_ico"></i>
+				<i class="icon-list"></i>
+			</div>
+		</div>
+		<div class="offpage-left">
+			<div class="header">
+				Quilt
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="post"><span class="icon"><i class="icon-settings"></i></span> Settings</a></li>
+				<li><a href="post"><span class="icon"><i class="icon-globe"></i></span> Component</a></li>
+				<li>
+					<ul class="components">
+						<li><a href="post">Grid <span class="icon"><i class="icon-pen"></i></span></a></li>
+						<li><a href="post">Navigation <span class="icon"><i class="icon-pen"></i></span></a></li>
+						<li><a href="post">Tables <span class="icon"><i class="icon-pen"></i></span></a></li>
+						<li><a href="post">Forms <span class="icon"><i class="icon-pen"></i></span></a></li>
+						<li><a href="post">Icons <span class="icon"><i class="icon-pen"></i></span></a></li>
+						<li><a href="post">Typography <span class="icon"><i class="icon-plus"></i></span></a></li>
+						<li><a href="post">Buttons <span class="icon"><i class="icon-plus"></i></span></a></li>
+						<li><a href="post">Lists <span class="icon"><i class="icon-plus"></i></span></a></li>
+					</ul>
+				</li>
+				<li><a href="post"><span class="icon"><i class="icon-plus"></i></span> Add New Component</a></li>
+			</ul> 
+		</div>
+	</div>
 
-<%= yield %>
+	<div class="main container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
