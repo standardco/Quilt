@@ -1,4 +1,7 @@
 Quilt::Application.routes.draw do
+
+  root :to => "components#index"
+
   resources :components
 
   resources :users
@@ -57,4 +60,6 @@ Quilt::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
 end
