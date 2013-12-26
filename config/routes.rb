@@ -1,5 +1,6 @@
 Quilt::Application.routes.draw do
 
+  devise_for :users
   root :to => "components#index"
 
   resources :components

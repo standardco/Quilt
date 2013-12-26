@@ -9,6 +9,9 @@
 <body class="body">
 	<div class="navbar navbar-fixed-top">
 		<div class="main">
+			<!-- Jared: these were added by devise. they need to be incorporated into the site please-->
+			<p class="notice"><%= notice %></p>
+       		<p class="alert"><%= alert %></p>
 			<div class="left">
 				<a href="#" class="nav-offpage-left"><%= image_tag("menu.png") %></a>
 				<a class="navbar-brand" href="/"><%= image_tag("quilt.png") %></a>
@@ -22,9 +25,22 @@
 			<div class="header">
 				Quilt
 			</div>
+			<% if user_signed_in? %>
+
+			Logged in as <strong><%= current_user.email %></strong>.
+
+			<% end %>
 			<ul class="nav navbar-nav">
 				<li><a href="post"><span class="icon"><i class="icon-settings"></i></span> Settings</a></li>
 				<li><a href="post"><span class="icon"><i class="icon-globe"></i></span> Component</a></li>
+				<% if user_signed_in? %>
+				<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+				<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+				<% else %>
+				<li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+  				<li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+				<% end %>
+				
 				<li>
 					<ul class="components">
 						<li><a href="post">Grid <span class="icon"><i class="icon-pen"></i></span></a></li>
