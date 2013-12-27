@@ -22,10 +22,16 @@ $(document).on('ready', function() {
 		return false;
 	});
 	
-	$('.code').on('click', function() {
+	$(document).on('click', '.code', function() {
 		var id = $(this).data('id');
-		$('.code-details.'+id).slideToggle('hide');
+		$('.code-details.'+id).fadeToggle();
 		return false;
 	});
 
 });
+
+function textAreaAdjust(o) {
+	console.log(o);
+    o.style.height = "1px";
+    o.style.height = (25+o.scrollHeight)+"px";
+}

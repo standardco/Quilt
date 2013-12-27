@@ -1,4 +1,10 @@
 Quilt::Application.routes.draw do
+
+  devise_for :users
+  root :to => "components#index"
+
+  resources :components
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -55,4 +61,6 @@ Quilt::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
 end
