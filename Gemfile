@@ -8,6 +8,8 @@ gem 'bson_ext'
 
 gem 'devise'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
