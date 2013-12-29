@@ -7,6 +7,7 @@ gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 
 gem 'devise'
+gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

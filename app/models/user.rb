@@ -35,4 +35,10 @@ class User
   # field :locked_at,       :type => Time
   field :FirstName, :type => String
   field :LastName, :type => String
+  
+  # needed for oauth
+  field :provider, :type => String
+  field :uid, :type => String
+  field :name, :type => String
+
 end
