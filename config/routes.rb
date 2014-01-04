@@ -1,11 +1,13 @@
 Quilt::Application.routes.draw do
 
+  get "welcome/index"
   devise_for :users
-  root :to => "components#index"
+
+  root :to => "welcome#index"
 
   resources :components
 
-  resources :users
+  # resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

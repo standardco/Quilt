@@ -1,8 +1,7 @@
 body {
-  padding: 70px 0;
   font-family: 'Open Sans', sans-serif;
   color: #585858;font-size: 18px; }
-
+.body { padding: 70px 0; }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'bebas_neueregular', Arial, sans-serif; }
 
@@ -30,6 +29,13 @@ a:hover { text-decoration: none }
 .main .left { float: left; }
 .main .right { float: right;padding: 15px 20px; }
 
+
+/* Home Classes
+-----------------------------------------*/
+.home-nav { text-align: right;font-size: 12px;margin: 10px 15px; }
+.hero { border-bottom: 1px solid #333;padding: 220px 0 300px; }
+.hero h1 { text-align: center; }
+.body p { text-align: center; }
 
 /* Nav Classes
 -----------------------------------------*/

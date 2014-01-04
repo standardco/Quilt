@@ -1,0 +1,15 @@
+<div class="home-nav">
+	<% if user_signed_in? %>
+		<%= link_to "My Style Guide", components_path %>
+	<% else %>
+		<%= link_to "Sign up", new_user_registration_path %> | 
+		<%= link_to "Login", new_user_session_path %>
+	<% end %>
+</div>
+<div class="hero">
+	<h1>Build, Communicate, and Show Off Your Styleguide</h1>
+</div>
+<div class="body">
+	<p>This is marketing content down here.</p>
+</div>
+
