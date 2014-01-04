@@ -40,7 +40,7 @@ a:hover { text-decoration: none }
 
 .navbar-nav > li { float: none; }
 .navbar-nav > li > ul.components { list-style-type: none;padding-left: 40px; }
-.navbar-nav > li > ul.components li a { color: #f2f2f2;padding: 10px 15px;padding-bottom: 15px;display: block;border-bottom: 1px solid #444; }
+.navbar-nav > li > ul.components li a { color: #f2f2f2;padding: 10px 15px;display: block;border-bottom: 1px solid #444;font-size: 14px; }
 .navbar-nav > li > ul.components li a:hover { background-color: #444; }
 .navbar-nav > li > ul.components li a .icon { float: right; }
 

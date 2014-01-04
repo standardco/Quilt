@@ -10,8 +10,8 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="main">
 			<!-- Jared: these were added by devise. they need to be incorporated into the site please-->
-			<p class="notice"><%= notice %></p>
-       		<p class="alert"><%= alert %></p>
+			<!-- <p class="notice"><%= notice %></p>
+       		<p class="alert"><%= alert %></p> -->
 			<div class="left">
 				<a href="#" class="nav-offpage-left"><%= image_tag("menu.png") %></a>
 				<a class="navbar-brand" href="/"><%= image_tag("quilt.png") %></a>
@@ -31,29 +31,33 @@
 
 			<% end %>
 			<ul class="nav navbar-nav">
-				<li><a href="post"><span class="icon"><i class="icon-settings"></i></span> Settings</a></li>
-				<li><a href="post"><span class="icon"><i class="icon-globe"></i></span> Component</a></li>
 				<% if user_signed_in? %>
-				<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-				<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+					<li><a href="post"><span class="icon"><i class="icon-settings"></i></span> Settings</a></li>
+					<li><a href="post"><span class="icon"><i class="icon-globe"></i></span> Component</a></li>
+
+					<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+					<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+					<li>
+						<ul class="components">
+							<li><a href="post">Grid <span class="icon"><i class="icon-pen"></i></span></a></li>
+							<li><a href="post">Navigation <span class="icon"><i class="icon-pen"></i></span></a></li>
+							<li><a href="post">Tables <span class="icon"><i class="icon-pen"></i></span></a></li>
+							<li><a href="post">Forms <span class="icon"><i class="icon-pen"></i></span></a></li>
+							<li><a href="post">Icons <span class="icon"><i class="icon-pen"></i></span></a></li>
+							<li><a href="post">Typography <span class="icon"><i class="icon-plus"></i></span></a></li>
+							<li><a href="post">Buttons <span class="icon"><i class="icon-plus"></i></span></a></li>
+							<li><a href="post">Lists <span class="icon"><i class="icon-plus"></i></span></a></li>
+						</ul>
+					</li>
+					<li>
+						<%= link_to components_path do %>
+	  						<span class="icon"><i class="icon-plus"></i></span> Add New Component
+						<% end %>
+					</li>
 				<% else %>
-				<li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-  				<li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+					<li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+	  				<li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
 				<% end %>
-				
-				<li>
-					<ul class="components">
-						<li><a href="post">Grid <span class="icon"><i class="icon-pen"></i></span></a></li>
-						<li><a href="post">Navigation <span class="icon"><i class="icon-pen"></i></span></a></li>
-						<li><a href="post">Tables <span class="icon"><i class="icon-pen"></i></span></a></li>
-						<li><a href="post">Forms <span class="icon"><i class="icon-pen"></i></span></a></li>
-						<li><a href="post">Icons <span class="icon"><i class="icon-pen"></i></span></a></li>
-						<li><a href="post">Typography <span class="icon"><i class="icon-plus"></i></span></a></li>
-						<li><a href="post">Buttons <span class="icon"><i class="icon-plus"></i></span></a></li>
-						<li><a href="post">Lists <span class="icon"><i class="icon-plus"></i></span></a></li>
-					</ul>
-				</li>
-				<li><a href="post"><span class="icon"><i class="icon-plus"></i></span> Add New Component</a></li>
 			</ul> 
 		</div>
 	</div>
