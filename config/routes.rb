@@ -1,11 +1,13 @@
 Quilt::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => "components#index"
 
   resources :components
 
   resources :users
+
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -63,4 +65,4 @@ Quilt::Application.routes.draw do
   #   end
 
 
-end
+
