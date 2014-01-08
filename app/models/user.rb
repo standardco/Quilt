@@ -42,6 +42,8 @@ class User
 	field :uid, :type => String
 	field :name, :type => String
 
+	has_many :components
+
 	def self.find_for_github_oauth(auth, signed_in_resource=nil)
 		
 		user = User.where(:provider => auth.provider, :uid => auth.uid).first

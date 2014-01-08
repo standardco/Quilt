@@ -1,8 +1,7 @@
 body {
-  padding: 70px 0;
   font-family: 'Open Sans', sans-serif;
   color: #585858;font-size: 18px; }
-
+.body { padding: 70px 0; }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'bebas_neueregular', Arial, sans-serif; }
 
@@ -31,6 +30,13 @@ a:hover { text-decoration: none }
 .main .right { float: right;padding: 15px 20px; }
 
 
+/* Home Classes
+-----------------------------------------*/
+.home-nav { text-align: right;font-size: 12px;margin: 10px 15px; }
+.hero { border-bottom: 1px solid #333;padding: 220px 0 300px; }
+.hero h1 { text-align: center; }
+.body p { text-align: center; }
+
 /* Nav Classes
 -----------------------------------------*/
 .navbar { width: 100%;min-height: 65px;border-top: 3px solid #F7F7F7;min-height: 75px; }
@@ -40,7 +46,7 @@ a:hover { text-decoration: none }
 
 .navbar-nav > li { float: none; }
 .navbar-nav > li > ul.components { list-style-type: none;padding-left: 40px; }
-.navbar-nav > li > ul.components li a { color: #f2f2f2;padding: 10px 15px;padding-bottom: 15px;display: block;border-bottom: 1px solid #444; }
+.navbar-nav > li > ul.components li a { color: #f2f2f2;padding: 10px 15px;display: block;border-bottom: 1px solid #444;font-size: 14px; }
 .navbar-nav > li > ul.components li a:hover { background-color: #444; }
 .navbar-nav > li > ul.components li a .icon { float: right; }
 

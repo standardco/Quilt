@@ -5,4 +5,7 @@ class Component
   field :notes, type: String
   field :dependencies, type: String
   field :code, type: String
+  field :user_id, type: String
+
+  belongs_to :user
 end

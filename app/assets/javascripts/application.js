@@ -17,7 +17,7 @@
 
 $(document).on('ready', function() {
 
-	$('.nav-offpage-left').on('click', function() {
+	$(document).on('click', '.nav-offpage-left', function() {
 		$('.body').toggleClass('push-left');
 		return false;
 	});
