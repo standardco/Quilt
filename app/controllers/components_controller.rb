@@ -1,6 +1,6 @@
 class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
   # GET /components
   # GET /components.json
   def index
@@ -24,7 +24,11 @@ class ComponentsController < ApplicationController
   # POST /components
   # POST /components.json
   def create
+    @user = current_user
+
     @component = Component.new(component_params)
+
+    @component.user_id = @user.id
 
     respond_to do |format|
       if @component.save
