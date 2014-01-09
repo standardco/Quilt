@@ -4,10 +4,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :configure_devise_params, if: :devise_controller?
-  
+  before_filter :component_tags
+
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
       u.permit(:FirstName, :LastName, :email, :password, :password_confirmation)
     end
+  end
+
+  protected
+
+  def component_tags
+  	@components = Component.all
   end
 end
