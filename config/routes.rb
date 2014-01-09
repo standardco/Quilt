@@ -5,6 +5,7 @@ Quilt::Application.routes.draw do
   root :to => "components#index"
 
   resources :components
+  get '/welcome/index', to: 'welcome#index'
 
   # resources :users
 
