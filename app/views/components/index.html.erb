@@ -1,34 +1,61 @@
-<h1>Listing components</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Notes</th>
-      <th>Dependencies</th>
-      <th>Code</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @components.each do |component| %>
-      <tr>
-        <td><%= component.title %></td>
-        <td><%= component.description %></td>
-        <td><%= component.notes %></td>
-        <td><%= component.dependencies %></td>
-        <td><%= component.code %></td>
-        <td><%= link_to 'Show', component %></td>
-        <td><%= link_to 'Edit', edit_component_path(component) %></td>
-        <td><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+    <h3>
+      <%= component.title %>
+    </h3>
+
+    <hr>
+
+    <p>
+      <%= component.description %>
+    </p>
+
+    <div class="element">
+        <!-- <a href="#" class="btn btn-default">Button</a> -->
+        <%= component.code %>
+    </div>
+
+    <div class="codeline">
+        <div class="pull-left">
+            <div class="tags">
+                <a href="">Tag</a>, 
+                <a href="">Tag</a>, 
+                <a href="">Tag</a>
+            </div>
+        </div>
+        <div class="pull-right">
+            <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
+            <%= link_to edit_component_path(component) do %>
+                <i class="icon-pen"></i>
+            <% end %>
+            <a href=""><i class="icon-cancel_circle"></i></a>
+        </div>
+    </div>
+    <div class="code-details one">
+        <div class="">
+            <strong>Dependencies:</strong>
+            <%= component.dependencies %>
+
+        <pre class="prettyprint prettyprinted" >
+            <%= component.code %>
+        </pre>
+
+        <p>
+          <strong>Notes:</strong>
+          <%= component.notes %>
+        </p>
+
+      </div> 
+    </div>
+        <!--
+        <%= link_to 'Show', component %>
+        
+        <%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %>
+        -->
+
+
     <% end %>
-  </tbody>
-</table>
 
 <br>
 

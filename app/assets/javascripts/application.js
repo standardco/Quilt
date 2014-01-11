@@ -18,20 +18,28 @@
 $(document).on('ready', function() {
 
 	$(document).on('click', '.nav-offpage-left', function() {
-		$('.body').toggleClass('push-left');
-		return false;
-	});
+        $('.body').toggleClass('push-left');
+        return false;
+    });
+
+    var pushedLeft = $('.body').hasClass('push-left');
+    if (!pushedLeft) {
+        $(document).on('click', '.body', function() {
+            $('.body').removeClass('push-left');
+        });
+    }
+
 	
-	$(document).on('click', '.code', function() {
-		var id = $(this).data('id');
-		$('.code-details.'+id).fadeToggle();
-		return false;
-	});
+	// $(document).on('click', '.code', function() {
+	// 	var id = $(this).data('id');
+	// 	$('.code-details.'+id).fadeToggle();
+	// 	return false;
+	// });
 
 });
 
-function textAreaAdjust(o) {
-	console.log(o);
-    o.style.height = "1px";
-    o.style.height = (25+o.scrollHeight)+"px";
-}
+// function textAreaAdjust(o) {
+// 	console.log(o);
+//     o.style.height = "1px";
+//     o.style.height = (25+o.scrollHeight)+"px";
+// }
