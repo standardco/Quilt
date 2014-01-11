@@ -1,0 +1,29 @@
+<h1>Listing styleguides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @styleguides.each do |styleguide| %>
+      <tr>
+        <td><%= styleguide.title %></td>
+        <td><%= styleguide.user_id %></td>
+        <td><%= link_to 'Show', styleguide %></td>
+        <td><%= link_to 'Edit', edit_styleguide_path(styleguide) %></td>
+        <td><%= link_to 'Destroy', styleguide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Styleguide', new_styleguide_path %>

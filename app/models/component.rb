@@ -7,5 +7,5 @@ class Component
   field :code, type: String
   field :user_id, type: String
 
-  belongs_to :user
+  belongs_to :styleguide
 end

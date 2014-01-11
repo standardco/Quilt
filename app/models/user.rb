@@ -42,7 +42,7 @@ class User
 	field :uid, :type => String
 	field :name, :type => String
 
-	has_many :components
+	has_many :styleguides
 
 	def self.find_for_github_oauth(auth, signed_in_resource=nil)
 		
@@ -54,11 +54,8 @@ class User
 			                     email:auth.info.email,
 			                     password:Devise.friendly_token[0,20]
 			                     )
-		else
-			p 'not createD?'
+		
 		end
-
-		user.inspect
 
 		user
 	end
