@@ -4,7 +4,7 @@ Quilt::Application.routes.draw do
   resources :styleguides
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  root :to => "styleguides#index"
+  root :to => "welcome#index"
 
   resources :components
   get '/welcome/index', to: 'welcome#index'
