@@ -41,6 +41,7 @@ class User
 	field :provider, :type => String
 	field :uid, :type => String
 	field :name, :type => String
+	field :username, :type => String
 
 	has_many :styleguides
 

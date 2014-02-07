@@ -6,8 +6,14 @@ Quilt::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => "styleguides#index"
 
-  resources :components
+  resources :components do
+    get "manual"
+  end
+
+
   get '/welcome/index', to: 'welcome#index'
+
+
 
   # resources :users
 

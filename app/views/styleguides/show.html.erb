@@ -11,4 +11,5 @@
 </p>
 
 <%= link_to 'Edit', edit_styleguide_path(@styleguide) %> |
-<%= link_to 'Back', styleguides_path %>
+<%= link_to 'Back', styleguides_path %> | 
+<%= link_to 'Add Component', components_path(:id => @styleguide) %>

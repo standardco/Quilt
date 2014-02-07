@@ -12,9 +12,18 @@ class ComponentsController < ApplicationController
   def show
   end
 
+  # GET /components/manual
+  def manual
+  end
+
   # GET /components/new
   def new
     @component = Component.new
+    user_id = current_user.id
+
+    #p 'asdfasdf'
+    #@styleguides = Styleguide.where("user_id = ?", "adfasdfsf")
+    @styleguides = Styleguide.find_by user_id: user_id
   end
 
   # GET /components/1/edit
