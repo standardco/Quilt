@@ -16,6 +16,15 @@ class ComponentsController < ApplicationController
   def manual
   end
 
+  # GET /components/upload
+  def upload
+
+  end
+
+  # GET /components/github
+  def github
+  end
+
   # GET /components/new
   def new
     @component = Component.new
