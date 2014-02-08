@@ -1,9 +1,10 @@
 Quilt::Application.routes.draw do
   
   get "/welcome/index", to: "welcome#index"
-  get "/components/manual"
   get "/components/upload"
   get "/components/github"
+
+
 
   resources :styleguides
   resources :components
@@ -19,7 +20,6 @@ Quilt::Application.routes.draw do
 
   match '/:user' => "styleguides#index",:via => [:get]
   match '/:user/:styleguide' => "styleguides#show",:via => [:get]
-
   match '/:user/:styleguide/:component' => "components#show",:via => [:get]
 
 

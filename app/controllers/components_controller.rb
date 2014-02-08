@@ -13,12 +13,6 @@ class ComponentsController < ApplicationController
   def show
   end
 
-  # GET /components/manual
-  def manual
-    @component = Component.new
-
-  end
-
   def 
 
   # GET /components/upload
@@ -58,7 +52,7 @@ class ComponentsController < ApplicationController
     respond_to do |format|
       if @component.save
         component_path = get_component_path
-
+        
         format.html { redirect_to component_path, notice: 'Component was successfully created.' }
         format.json { render action: 'show', status: :created, location: @component }
       else
@@ -108,6 +102,10 @@ class ComponentsController < ApplicationController
       
       if (styleguide_id == nil)
         styleguide_id = params[:id]
+      end
+
+      if (styleguide_id == nil)
+        styleguide_id = params[:styleguide_id]
       end
 
       #styleguide_id = "52f685484a61720a75090000"
