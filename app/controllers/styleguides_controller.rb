@@ -2,9 +2,12 @@ class StyleguidesController < ApplicationController
   before_action :set_styleguide, only: [:show, :edit, :update, :destroy]
 
 
+  # GET /:user (/tjmule)
   # GET /styleguides
   # GET /styleguides.json
   def index
+    @user = current_user
+    # changed to return just a given user's styleguides
     @styleguides = Styleguide.all
   end
 
@@ -64,10 +67,15 @@ class StyleguidesController < ApplicationController
     end
   end
 
+  def path_to_styleguide
+
+    "here"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_styleguide
-      @styleguide = Styleguide.find(params[:id])
+      @styleguide = Styleguide.find(params[:styleguide])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
