@@ -1,4 +1,14 @@
+    <%
+    arr = @styleguide.css_paths.split(",")
 
+    arr.each do |css_path|
+    %>
+    <%= stylesheet_link_tag css_path %>
+    
+    <%
+    end
+
+    %>
     <% @components.each do |component| %>
 
     <h3>
@@ -19,7 +29,10 @@
     <div class="codeline">
         
         <div class="pull-right">
-            <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
+            <%= link_to @owner._slugs[0] + '/' + @styleguide._slugs[0] + "/" + component._slugs[0] do %>
+                <i class="icon-newspaper"></i>
+            <% end %>
+            
             <%= link_to edit_component_path(component) do %>
                 <i class="icon-pen"></i>
             <% end %>

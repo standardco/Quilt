@@ -1,5 +1,6 @@
 class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
+  before_action :set_styleguide
   before_filter :authenticate_user!
   # GET /components
   # GET /components.json
@@ -54,7 +55,9 @@ class ComponentsController < ApplicationController
 
     respond_to do |format|
       if @component.save
-        format.html { redirect_to @component, notice: 'Component was successfully created.' }
+        component_path = get_component_path
+
+        format.html { redirect_to component_path, notice: 'Component was successfully created.' }
         format.json { render action: 'show', status: :created, location: @component }
       else
         format.html { render action: 'new' }
@@ -68,7 +71,8 @@ class ComponentsController < ApplicationController
   def update
     respond_to do |format|
       if @component.update(component_params)
-        format.html { redirect_to @component, notice: 'Component was successfully updated.' }
+        component_path = get_component_path
+        format.html { redirect_to component_path, notice: 'Component was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -88,9 +92,20 @@ class ComponentsController < ApplicationController
   end
 
   private
+    def get_component_path
+      #puts "this is the path" + @owner._slugs[0] + '/' + @styleguide._slugs[0] + '/' + @component._slugs[0]
+      return '/' + @owner._slugs[0] + '/' + @styleguide._slugs[0] + '/' + @component._slugs[0]
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_component
-      @component = Component.find(params[:id])
+      @component = Component.find(params[:component])
+    end
+
+    def set_styleguide
+      #styleguide_id = params[:styleguide_id]
+      styleguide_id = "52f66438544a732ced010000"
+      @styleguide = Styleguide.find(styleguide_id)
+      @owner = @styleguide.user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
