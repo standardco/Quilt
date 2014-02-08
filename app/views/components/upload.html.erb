@@ -1,7 +1,7 @@
 <h3>Upload your Quilt Sheet</h3>
 <%= form_tag("/components/upload_html", :method => "post") do %>
 <div class="field">
-  <%= text_area_tag(:html, "Hi, nice site", :size => "24x6") %>
+  <%= text_area_tag(:html, @demo, :size => "24x16") %>
 </div>
 <div class="actions">
   <%= submit_tag("Upload") %>
