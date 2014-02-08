@@ -1,9 +1,62 @@
 <div class="styleguide-form row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-8">
     	<h1>Create new styleguide</h1>
-
 		<%= render 'form' %>
-
 		<%= link_to 'Cancel', styleguides_path, :class => "cancel muted" %>
     </div>
+    <div class="col-sm-4">
+    	<h3>Suggested Categories</h3>
+    	<div class="sug-categories">
+	    	<div class="sug-category" data-cat="Brand">
+    	        Brand
+        	    <a class="add" onClick="getCategories();">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Typography">
+    	        Typography
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Page Structure">
+    	        Page Structure
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Navigation">
+    	        Navigation
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Buttons">
+    	        Buttons
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Images">
+    	        Images
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Forms">
+    	        Forms
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Alerts">
+    	        Alerts
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Modals">
+    	        Modals
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Popover">
+    	        Popover
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Tables">
+    	        Tables
+        	    <a class="add">Add</a>
+        	</div>
+        	<div class="sug-category" data-cat="Helpers">
+    	        Helpers
+        	    <a class="add">Add</a>
+        	</div>
+        </div>
+    </div>
 </div>
+
+<!--  -->

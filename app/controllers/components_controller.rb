@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
   before_action :set_styleguide
@@ -17,7 +20,39 @@ class ComponentsController < ApplicationController
 
   # GET /components/upload
   def upload
+    # Add demo content for testing purposes.
+    @demo = '<!-- quilt component -->
+<button name="button-1">Click me</button>
+<!-- quilt end -->
 
+<!-- quilt component -->
+<input name="checkbox-1" type="checkbox">
+<!-- quilt end -->
+
+<!-- quilt component -->
+<select name="select-album">
+  <option value="gish">Gish</option>
+  <option value="siamese-dream">Siamese Dream</option>
+  <option value="mellon-collie">Mellon Collie and the Infinite Sadness</option>
+  <option value="adore">Adore</option>
+</select>
+<!-- quilt end -->'
+  end
+
+  # POST /components/upload
+  def upload_html
+
+    # Extract the quilt components.
+    html = params[:html]
+    index = 0
+    html.scan(/<!-- quilt component -->(.*?)<!-- quilt end -->/m) do |match|
+      index = index + 1
+      puts "Component #{index}: \n" + match[0] + "\n"
+    end
+
+    respond_to do |format|
+      format.html { render action: 'upload' }
+    end
   end
 
   # GET /components/github
@@ -98,6 +133,7 @@ class ComponentsController < ApplicationController
     end
 
     def set_styleguide
+
       styleguide_id = params[:styleguide]
       
       if (styleguide_id == nil)
