@@ -15,6 +15,8 @@ class ComponentsController < ApplicationController
 
   # GET /components/manual
   def manual
+    @component = Component.new
+
   end
 
   def 
@@ -102,8 +104,8 @@ class ComponentsController < ApplicationController
     end
 
     def set_styleguide
-      #styleguide_id = params[:styleguide_id]
-      styleguide_id = "52f66438544a732ced010000"
+      styleguide_id = params[:styleguide]
+      #styleguide_id = "52f685484a61720a75090000"
       @styleguide = Styleguide.find(styleguide_id)
       @owner = @styleguide.user
     end
