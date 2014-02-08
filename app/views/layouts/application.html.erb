@@ -79,6 +79,11 @@
 	  						<span class="icon"><i class="icon-plus"></i></span> Add New Component
 						<% end %>
 					</li>
+					<li>
+						<%= link_to new_component_path do %>
+	  						<span class="icon"><i class="icon-plus"></i></span> Add New Styleguide
+						<% end %>
+					</li>
 				<% else %>
 					<li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
 	  				<li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
