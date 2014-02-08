@@ -1,29 +1,35 @@
-<h1>Listing styleguides</h1>
+<div class="new-guide">
+  <a class="btn pull-right" href="/styleguides/new">+ New Styleguide</a>
+</div>
+<div class="no-guide">
+    <img src="http://placehold.it/150x150" />
+    <h2>Welcome to Quilt</h2>
+    <p>We've prepopulated a few styleguides to give you an idea of what's possible with Quilt. Take a look around or get started by creating <a href="/styleguides/new">a new Style Guide</a></p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="guides">
+  <% @styleguides.each do |styleguide| %>
+  <div class="guide">
+    <div class="area">
+      <h4>102</h4>
+      <p>Components</p>
+    </div>
+    <%= styleguide.title %>
 
-  <tbody>
-    <% @styleguides.each do |styleguide| %>
-      <tr>
-        <td><%= styleguide.title %></td>
-        <td><%= styleguide.user_id %></td>
-        <td><%= link_to 'Show', styleguide %></td>
-        <td><%= link_to 'Edit', edit_styleguide_path(styleguide) %></td>
-        <td><%= link_to 'Destroy', styleguide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%= link_to 'Show', styleguide.user._slugs[0] + "/" + styleguide._slugs[0] %>
+  <%= link_to 'Edit', edit_styleguide_path(styleguide) %>
+  <%= link_to 'Destroy', styleguide, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 
-<br>
+ <!--  <%= styleguide.user_id %> -->
+ 
+<% end %>
+</div>
+
+
+
+
+
+<br clear="all">
 
 <%= link_to 'New Styleguide', new_styleguide_path %>

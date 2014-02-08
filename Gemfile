@@ -32,6 +32,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'mongoid_slug'
+
 # Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser.
 gem "nokogiri", "~> 1.6.1"
 

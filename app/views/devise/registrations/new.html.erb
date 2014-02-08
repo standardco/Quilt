@@ -1,38 +1,25 @@
-<div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      
-            
-       
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :user_name %><br>
-    <%= f.text_field :FirstName, :autofocus => true %>
-  </div>
-  
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-            <div class="form-group row">
-                <%= f.label :password, :class => 'col-sm-4 control-label' %>
-                <div class="col-sm-8">
-                    <%= f.password_field :password %>
-                </div>
+<div class="authentication row">
+    <div class="col-sm-4 col-sm-offset-4">
+        <h2>Sign Up</h2>
+        <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github), :class => 'btn github' %>
+        <hr>
+        <div class="or">OR</div>
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="form-group">
+                <%= f.text_field :username, :placeholder => 'Username' %>
             </div>
-
-            <!-- <div class="form-group row">
-                <%= f.label :password_confirmation, 'Password', :class => 'col-sm-4 control-label' %>
-                <div class="col-sm-8">
-                    <%= f.password_field :password_confirmation, :placeholder => "confirm" %>
-                </div>
-            </div> -->
-            <div class="row">
-                <div class="col-sm-4">
-                    <%= f.submit "Sign in", :class => "btn" %>
-                </div>
-                <div class="col-sm-8">
-                    <%= render "devise/shared/links" %>
-                </div>
+            <div class="form-group">
+                <%= f.email_field :email, :placeholder => 'Email' %>
+            </div>
+            <div class="form-group">
+                <%= f.password_field :password, :placeholder => 'Password' %>
+            </div>
+            <div class="form-group">
+                <%= f.submit "Sign up", :class => "btn" %>
+            </div>
+            <div class="links">
+                <%= render "devise/shared/links" %>
             </div>
         <% end %>
     </div>

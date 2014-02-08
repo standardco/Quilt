@@ -1,4 +1,10 @@
+    <% arr = @styleguide.css_paths.split(",")
 
+    arr.each do |css_path|
+    %>
+    <%= stylesheet_link_tag css_path %>
+    
+    <% end %>
     <% @components.each do |component| %>
 
     <h3>
@@ -13,19 +19,16 @@
 
     <div class="element">
         <!-- <a href="#" class="btn btn-default">Button</a> -->
-        <%= component.code %>
+        <%= component.code.html_safe %>
     </div>
 
     <div class="codeline">
-        <div class="pull-left">
-            <div class="tags">
-                <a href="">Tag</a>, 
-                <a href="">Tag</a>, 
-                <a href="">Tag</a>
-            </div>
-        </div>
+        
         <div class="pull-right">
-            <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
+            <%= link_to @owner._slugs[0] + '/' + @styleguide._slugs[0] + "/" + component._slugs[0] do %>
+                <i class="icon-newspaper"></i>
+            <% end %>
+            
             <%= link_to edit_component_path(component) do %>
                 <i class="icon-pen"></i>
             <% end %>
@@ -36,10 +39,10 @@
         <div class="">
             <strong>Dependencies:</strong>
             <%= component.dependencies %>
+        <div class="">
 
-        <pre class="prettyprint prettyprinted" >
-            <%= component.code %>
-        </pre>
+            <%= component.code.html_safe %>
+        </div>
 
         <p>
           <strong>Notes:</strong>

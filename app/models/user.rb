@@ -1,5 +1,7 @@
 class User
 	include Mongoid::Document
+	include Mongoid::Slug
+
 	devise :omniauthable, :omniauth_providers => [:github]
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
@@ -43,12 +45,15 @@ class User
 	field :name, :type => String
 	field :username, :type => String
 
+	slug :username
+
 	has_many :styleguides
 
 	def self.find_for_github_oauth(auth, signed_in_resource=nil)
 		
 		user = User.where(:provider => auth.provider, :uid => auth.uid).first
 		unless user
+			puts "alfiessss"
 			user = User.create(name:auth.extra.raw_info.name,
 			                     provider:auth.provider,
 			                     uid:auth.uid,
