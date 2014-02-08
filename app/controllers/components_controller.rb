@@ -55,7 +55,9 @@ class ComponentsController < ApplicationController
 
     respond_to do |format|
       if @component.save
-        format.html { redirect_to @component, notice: 'Component was successfully created.' }
+        component_path = get_component_path
+
+        format.html { redirect_to component_path, notice: 'Component was successfully created.' }
         format.json { render action: 'show', status: :created, location: @component }
       else
         format.html { render action: 'new' }
@@ -69,7 +71,8 @@ class ComponentsController < ApplicationController
   def update
     respond_to do |format|
       if @component.update(component_params)
-        format.html { redirect_to @component, notice: 'Component was successfully updated.' }
+        component_path = get_component_path
+        format.html { redirect_to component_path, notice: 'Component was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -89,9 +92,13 @@ class ComponentsController < ApplicationController
   end
 
   private
+    def get_component_path
+      #puts "this is the path" + @owner._slugs[0] + '/' + @styleguide._slugs[0] + '/' + @component._slugs[0]
+      return '/' + @owner._slugs[0] + '/' + @styleguide._slugs[0] + '/' + @component._slugs[0]
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_component
-      @component = Component.find(params[:id])
+      @component = Component.find(params[:component])
     end
 
     def set_styleguide
