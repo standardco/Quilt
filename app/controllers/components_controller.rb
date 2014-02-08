@@ -1,5 +1,6 @@
 class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
+  before_action :set_styleguide
   before_filter :authenticate_user!
   # GET /components
   # GET /components.json
@@ -91,6 +92,13 @@ class ComponentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_component
       @component = Component.find(params[:id])
+    end
+
+    def set_styleguide
+      #styleguide_id = params[:styleguide_id]
+      styleguide_id = "52f66438544a732ced010000"
+      @styleguide = Styleguide.find(styleguide_id)
+      @owner = @styleguide.user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
