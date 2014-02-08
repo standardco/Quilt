@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.text_field :title, :placeholder => "Title" %>
   </div>
@@ -29,4 +28,5 @@
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-default comp-save' %>
   </div>
+  <%= hidden_field_tag :styleguide_id, @styleguide_id %>
 <% end %>

@@ -8,6 +8,7 @@ class Component
   field :dependencies, type: String
   field :code, type: String
   field :user_id, type: String
+  field :styleguide_id, type: String
   field :tags, type: String
 
   slug :title
