@@ -10,6 +10,20 @@
   <%= @styleguide.user_id %>
 </p>
 
+<p>
+  <strong>Url:</strong>
+  <%= @styleguide.url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @styleguide.description %>
+</p>
+<p>
+  <strong>Categories:</strong>
+  <%= @styleguide.categories %>
+</p>
+
 <%= link_to 'Edit', edit_styleguide_path(@styleguide) %> |
 <%= link_to 'Back', styleguides_path %> | 
 <%= link_to 'Add Component', components_path(:id => @styleguide) %>
