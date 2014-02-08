@@ -3,6 +3,7 @@ Quilt::Application.routes.draw do
   get "/welcome/index", to: "welcome#index"
   get "/components/manual"
   get "/components/upload"
+  post "/components/upload_html"
   get "/components/github"
 
   resources :styleguides
@@ -10,13 +11,6 @@ Quilt::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => "welcome#index"
-
-
-
-
-
-
-
 
   # resources :users
 

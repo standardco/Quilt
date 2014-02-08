@@ -18,7 +18,14 @@ class ComponentsController < ApplicationController
 
   # GET /components/upload
   def upload
+  end
 
+  # POST /components/upload
+  def upload_html
+    puts "HTML content: " + params[:html]
+    respond_to do |format|
+      format.html { render action: 'upload' }
+    end
   end
 
   # GET /components/github
