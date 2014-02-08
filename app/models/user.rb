@@ -1,5 +1,7 @@
 class User
 	include Mongoid::Document
+	include Mongoid::Slug
+
 	devise :omniauthable, :omniauth_providers => [:github]
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
@@ -42,6 +44,8 @@ class User
 	field :uid, :type => String
 	field :name, :type => String
 	field :username, :type => String
+
+	slug :username
 
 	has_many :styleguides
 

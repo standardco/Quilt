@@ -16,6 +16,8 @@ class ComponentsController < ApplicationController
   def manual
   end
 
+  def 
+
   # GET /components/upload
   def upload
 
@@ -32,7 +34,8 @@ class ComponentsController < ApplicationController
 
     #p 'asdfasdf'
     #@styleguides = Styleguide.where("user_id = ?", "adfasdfsf")
-    @styleguides = Styleguide.find_by user_id: user_id
+    #@styleguides = Styleguide.find_by user_id: user_id
+    @styleguide_id = params[:id]
   end
 
   # GET /components/1/edit
@@ -47,6 +50,7 @@ class ComponentsController < ApplicationController
     @component = Component.new(component_params)
 
     @component.user_id = @user.id
+    @component.styleguide_id = params[:styleguide_id]
 
     respond_to do |format|
       if @component.save
