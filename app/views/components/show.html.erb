@@ -1,3 +1,10 @@
+<% arr = @styleguide.css_paths.split(",")
+
+    arr.each do |css_path|
+    %>
+    <%= stylesheet_link_tag css_path %>
+    
+<% end %>
 <h3>
   <%= @component.title %>
 </h3>
