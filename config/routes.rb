@@ -5,8 +5,6 @@ Quilt::Application.routes.draw do
   get "/components/upload"
   get "/components/github"
 
-  post "/components/manual", to: "components#save_manual"
-
   resources :styleguides
   resources :components
 

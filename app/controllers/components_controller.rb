@@ -16,6 +16,8 @@ class ComponentsController < ApplicationController
   def manual
   end
 
+  def 
+
   # GET /components/upload
   def upload
 
