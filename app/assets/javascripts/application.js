@@ -35,8 +35,23 @@ $(document).on('ready', function() {
 	// 	$('.code-details.'+id).fadeToggle();
 	// 	return false;
 	// });
-
+    
 });
+
+function getCategories() {
+    $('.sug-categories').on('click', '.add', function() {
+        var category = $(this).parent();
+        category.fadeOut();
+        var addCat = category.data('cat');
+
+        var html  = '<div class="category">';
+            html +=     addCat;
+            html += '</div>';
+
+        $('.addedCat').html(html);
+        $('#addedCat').val(addCat);
+    });
+}
 
 // function textAreaAdjust(o) {
 // 	console.log(o);
