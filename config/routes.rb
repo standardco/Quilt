@@ -1,9 +1,10 @@
 Quilt::Application.routes.draw do
   
   get "/welcome/index", to: "welcome#index"
-  get "/components/manual"
   get "/components/upload"
   get "/components/github"
+
+
 
   resources :styleguides
   resources :components
