@@ -10,16 +10,16 @@ Quilt::Application.routes.draw do
 
 
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+
+  end
   
 
   root :to => "welcome#index"
 
-
-
-
-
-
+  match '/:user' => "styleguides#index",:via => [:get]
+  match '/:user/:styleguide' => "styleguides#show",:via => [:get]
+  match '/:user/:styleguide/:component' => "component#index",:via => [:get]
 
 
   # resources :users
