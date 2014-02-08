@@ -1,9 +1,11 @@
+<!--
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
     	<%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => 'btn github' %><br>
-    <!-- <div><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></div> -->
+     <div><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></div> 
   <% end -%>
 <% end -%>
+-->
 
 
 <%- if controller_name != 'sessions' %>
