@@ -105,6 +105,11 @@ class ComponentsController < ApplicationController
 
     def set_styleguide
       styleguide_id = params[:styleguide]
+      
+      if (styleguide_id == nil)
+        styleguide_id = params[:id]
+      end
+
       #styleguide_id = "52f685484a61720a75090000"
       @styleguide = Styleguide.find(styleguide_id)
       @owner = @styleguide.user
