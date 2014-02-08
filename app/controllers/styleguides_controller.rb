@@ -34,7 +34,9 @@ class StyleguidesController < ApplicationController
 
     respond_to do |format|
       if @styleguide.save
-        format.html { redirect_to @styleguide, notice: 'Styleguide was successfully created.' }
+        styleguide_path = '/' + @styleguide.user._slugs[0] + '/' + @styleguide._slugs[0]
+
+        format.html { redirect_to styleguide_path, notice: 'Styleguide was successfully created.' }
         format.json { render action: 'show', status: :created, location: @styleguide }
       else
         format.html { render action: 'new' }
@@ -48,7 +50,9 @@ class StyleguidesController < ApplicationController
   def update
     respond_to do |format|
       if @styleguide.update(styleguide_params)
-        format.html { redirect_to @styleguide, notice: 'Styleguide was successfully updated.' }
+        styleguide_path = '/' + @styleguide.user._slugs[0] + '/' + @styleguide._slugs[0]
+
+        format.html { redirect_to styleguide_path, notice: 'Styleguide was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -77,7 +81,6 @@ class StyleguidesController < ApplicationController
     def set_styleguide
       @styleguide = Styleguide.find(params[:styleguide])
       @owner = @styleguide.user
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

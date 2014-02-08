@@ -1,14 +1,10 @@
-    <%
-    arr = @styleguide.css_paths.split(",")
+    <% arr = @styleguide.css_paths.split(",")
 
     arr.each do |css_path|
     %>
     <%= stylesheet_link_tag css_path %>
     
-    <%
-    end
-
-    %>
+    <% end %>
     <% @components.each do |component| %>
 
     <h3>

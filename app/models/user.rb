@@ -53,6 +53,7 @@ class User
 		
 		user = User.where(:provider => auth.provider, :uid => auth.uid).first
 		unless user
+			puts "alfiessss"
 			user = User.create(name:auth.extra.raw_info.name,
 			                     provider:auth.provider,
 			                     uid:auth.uid,
