@@ -8,8 +8,8 @@ class Styleguide
   field :css_path, type: String
   #field :tags, type: String
   field :description, type: String
-  field :url, type: String
   field :categories, type: String
+  field :num_components, type: Integer
 
   belongs_to :user
 
