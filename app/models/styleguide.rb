@@ -4,12 +4,13 @@ class Styleguide
 
   field :title, type: String
   field :user_id, type: String
-  field :is_public, type: Integer
+  field :is_public, type: String
   field :css_paths, type: String
   #field :tags, type: String
   field :description, type: String
   field :categories, type: String
   field :num_components, type: Integer
+  field :image_url, type: String
 
   belongs_to :user
 

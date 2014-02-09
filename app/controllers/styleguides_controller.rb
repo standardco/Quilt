@@ -85,6 +85,7 @@ class StyleguidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def styleguide_params
-      params.require(:styleguide).permit(:title, :user_id, :url, :description, :categories, :css_paths)
+      params.require(:styleguide).permit(:title, :user_id, :url, :description, :categories, :css_paths, :image_url,
+                                          :is_public)
     end
 end
