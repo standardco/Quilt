@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'mongoid_slug'
 
 # Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser.
-gem "nokogiri", "~> 1.6.1"
+#gem "nokogiri", "~> 1.6.1"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

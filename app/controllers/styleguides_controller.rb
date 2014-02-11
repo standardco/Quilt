@@ -8,7 +8,10 @@ class StyleguidesController < ApplicationController
   def index
     @user = current_user
     # changed to return just a given user's styleguides
-    @styleguides = Styleguide.all
+    #@styleguides = Styleguide.all
+    @current_user_styleguides = Styleguide.where(:user_id => @user.id).order_by(:created_at => "desc")
+    @public_styleguides = Styleguide.where(:is_public => "yes")
+
   end
 
   # GET /styleguides/1

@@ -1,6 +1,8 @@
 class Styleguide
   include Mongoid::Document
   include Mongoid::Slug
+  include Mongoid::Timestamps::Created
+  include Mongoid::Timestamps::Updated
 
   field :title, type: String
   field :user_id, type: String
