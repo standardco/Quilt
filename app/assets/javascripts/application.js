@@ -17,6 +17,8 @@
 
 $(document).on('ready', function() {
 
+    var myCodeMirror = CodeMirror(document.body);
+
 	$(document).on('click', '.nav-offpage-left', function() {
         $('.body').toggleClass('push-left');
         return false;
