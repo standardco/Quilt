@@ -1,6 +1,8 @@
 class Component
   include Mongoid::Document
   include Mongoid::Slug
+  include Mongoid::Timestamps::Created
+  include Mongoid::Timestamps::Updated
   
   field :title, type: String
   field :description, type: String

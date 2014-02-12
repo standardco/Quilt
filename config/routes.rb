@@ -2,6 +2,7 @@ Quilt::Application.routes.draw do
   
   get "/welcome/index", to: "welcome#index"
   get "/components/upload"
+  post "/components/upload_html"
   get "/components/github"
 
 
