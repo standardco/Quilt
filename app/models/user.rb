@@ -2,6 +2,7 @@ class User
 	include Mongoid::Document
 	include Mongoid::Slug
 	include Mongoid::Timestamps::Created
+	include Mongoid::Timestamps::Updated
 
 	devise :omniauthable, :omniauth_providers => [:github]
 	# Include default devise modules. Others available are:
