@@ -71,18 +71,13 @@ class ComponentsController < ApplicationController
   # POST /components
   # POST /components.json
   def create
-    @user = current_user
-
     @component = Component.new(component_params)
-
-    @component.user_id = @user.id
+    @component.user_id = current_user.id
     @component.styleguide_id = params[:styleguide_id]
 
     respond_to do |format|
       if @component.save
-        component_path = get_component_path
-        
-        format.html { redirect_to component_path, notice: 'Component was successfully created.' }
+        format.html { redirect_to get_component_path, notice: 'Component was successfully created.' }
         format.json { render action: 'show', status: :created, location: @component }
       else
         format.html { render action: 'new' }
