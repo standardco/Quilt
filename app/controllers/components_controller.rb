@@ -4,6 +4,7 @@ class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
   before_action :set_styleguide
   before_filter :authenticate_user!
+
   # GET /components
   # GET /components.json
   def index
@@ -61,12 +62,6 @@ class ComponentsController < ApplicationController
   # GET /components/new
   def new
     @component = Component.new
-    user_id = current_user.id
-
-    #p 'asdfasdf'
-    #@styleguides = Styleguide.where("user_id = ?", "adfasdfsf")
-    #@styleguides = Styleguide.find_by user_id: user_id
-    @styleguide_id = params[:id]
   end
 
   # GET /components/1/edit
@@ -123,29 +118,16 @@ class ComponentsController < ApplicationController
 
   private
     def get_component_path
-      #puts "this is the path" + @owner._slugs[0] + '/' + @styleguide._slugs[0] + '/' + @component._slugs[0]
-      return '/' + @owner._slugs[0] + '/' + @styleguide._slugs[0] + '/' + @component._slugs[0]
+      return '/' + @styleguide.user._slugs[0] + '/' + @styleguide._slugs[0] + '/' + @component._slugs[0]
     end
-    # Use callbacks to share common setup or constraints between actions.
+    
     def set_component
       @component = Component.find(params[:component])
     end
 
     def set_styleguide
-
-      styleguide_id = params[:styleguide]
-      
-      if (styleguide_id == nil)
-        styleguide_id = params[:id]
-      end
-
-      if (styleguide_id == nil)
-        styleguide_id = params[:styleguide_id]
-      end
-
-      #styleguide_id = "52f685484a61720a75090000"
+      styleguide_id = params[:styleguide] || params[:styleguide_id]
       @styleguide = Styleguide.find(styleguide_id)
-      @owner = @styleguide.user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

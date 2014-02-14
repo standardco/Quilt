@@ -2,7 +2,6 @@
   <% if @component.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@component.errors.count, "error") %> prohibited this component from being saved:</h2>
-
       <ul>
       <% @component.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,6 +9,9 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= text_field_tag 'styleguide', 'Styleguide: ' + @styleguide.title, disabled: true %>
+  </div>
   <div class="field">
     <%= f.text_field :title, :placeholder => "Title" %>
   </div>
@@ -28,5 +30,5 @@
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-default comp-save' %>
   </div>
-  <%= hidden_field_tag :styleguide_id, @styleguide_id %>
+  <%= hidden_field_tag :styleguide_id, @styleguide.id %>
 <% end %>
