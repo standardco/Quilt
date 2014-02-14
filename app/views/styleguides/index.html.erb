@@ -25,7 +25,7 @@ YOUR STYLEGUIDES!
     </div>
     <%= styleguide.title %>
   <%= styleguide.user._slugs[0] %>
-  <%= link_to 'Show', styleguide._slugs[0] %>
+  <%= link_to 'Show', styleguide.user._slugs[0] +'/'+ styleguide._slugs[0] %>
   <%= link_to 'Edit', edit_styleguide_path(styleguide) %>
   <%= link_to 'Destroy', styleguide, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
