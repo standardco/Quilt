@@ -49,6 +49,8 @@ class User
 
 	slug :username
 
+	validates_uniqueness_of :username, :email
+
 	has_many :styleguides
 
 	def self.find_for_github_oauth(auth, signed_in_resource=nil)
