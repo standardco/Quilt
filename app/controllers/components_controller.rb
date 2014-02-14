@@ -143,7 +143,7 @@ class ComponentsController < ApplicationController
         styleguide_id = params[:styleguide_id]
       end
 
-      #styleguide_id = "52f685484a61720a75090000"
+      styleguide_id = "52f685484a61720a75090000"
       @styleguide = Styleguide.find(styleguide_id)
       @owner = @styleguide.user
     end
