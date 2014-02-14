@@ -2,10 +2,11 @@
 <html>
 <head>
   <title>Quilt</title>
-  <%= yield :styleguide_css %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+	<%= yield :styleguide_css %>
+
 </head>
 <body class="body">
 	<div class="navbar navbar-fixed-top">
