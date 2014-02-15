@@ -41,6 +41,13 @@ transition: all 500ms ease; }
 .main .left { float: left; }
 .main .right { float: right;padding: 15px 20px; }
 
+/* Component Classes
+-----------------------------------------*/
+.component {
+  border:1px solid #ccc;
+  margin:5px;
+  padding:10px;
+}
 
 /* Home Classes
 -----------------------------------------*/
