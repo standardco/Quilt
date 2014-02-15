@@ -1,9 +1,14 @@
-    <% arr = @styleguide.css_paths.split(",")
+    <!--stylesheets here-->
+    <% 
+    content_for :styleguide_css do
+    arr = @styleguide.css_paths.split(",")
 
     arr.each do |css_path|
     %>
     <%= stylesheet_link_tag css_path %>
     
+    <% end %>
+
     <% end %>
     <% @components.each do |component| %>
 
