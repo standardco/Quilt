@@ -41,6 +41,27 @@ transition: all 500ms ease; }
 .main .left { float: left; }
 .main .right { float: right;padding: 15px 20px; }
 
+/* Component Classes
+-----------------------------------------*/
+.component {
+  border:1px solid #ccc;
+  margin:5px;
+  padding:10px;
+}
+
+#component {
+  h3 { display: inline; }
+  .edit { float: right; }
+  .code { margin-bottom: 20px; 
+    .dependency { background: #f2f2f2;border: 1px solid #ccc;padding: 5px 10px; }
+    .CodeMirror { border: 1px solid #ccc;border-top: 0; }
+  }
+}
+
+
+.styleguide-header { border-bottom: 1px solid #f2f2f2;padding-bottom: 10px;margin-bottom: 20px; }
+.styleguide-header h2 { display: inline; }
+.styleguide-header .view { margin-left: 100px;display: inline; }
 
 /* Home Classes
 -----------------------------------------*/
@@ -286,56 +307,6 @@ textarea {
 
 
 
-
-#codeTextarea {
-  width: 100%;
-  height: 510px; }
-
-.textAreaWithLines {
-  margin-left: -38px;
-  width: 100% !important; }
-
-.textAreaWithLines textarea, .textAreaWithLines div {
-  line-height: 120%; }
-
-.lineObj {
-  color: #585858; }
-
-xmp {
-  margin: 0; }
-
-pre.prettyprint {
-  padding: 20px 20px 0 !important;
-  border: 1px solid #ccc !important; }
-
-.tags {
-  float: left;
-  font-size: 11px;
-  margin-top: 5px; }
-
-.codeline {
-  margin-top: 20px;
-  margin-bottom: -20px; }
-
-.code {
-  text-align: right;
-  font-size: 24px;
-  text-decoration: none;
-  color: #FF6640;
-  margin-top: -10px; }
-
-.code:hover {
-  text-decoration: none; }
-
-.code-details {
-  clear: both;
-  height: 100%;
-  max-width: 100%; }
-
-.notes h4 {
-  margin: 0 0 3px 0;
-  display: inline; }
-
 /* Helper Classes
 -----------------------------------------*/
 .hide {
@@ -347,3 +318,4 @@ pre.prettyprint {
 .bold {
   font-weight: bold; }
 .show { visibility: visible !important; }
+.center { text-align: center; }

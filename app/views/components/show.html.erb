@@ -1,44 +1,58 @@
+<!-- 
 <% arr = @styleguide.css_paths.split(",") 
     arr.each do |css_path| %>
     <%= stylesheet_link_tag css_path %>   
 <% end %>
+ -->
 
-<div class="component">
-    <span class="edit">
-        <a href="">Edit</a>
-        <a href="">Delete</a>
-    </span>
-    <h3><%= @component.title %></h3>
-    <p><%= @component.description %></p>
+<div class="styleguide-header row">
+    <h2>Guide Name</h2>
+    <a href="">icon</a>
+    <a href="">icon</a>
+    <a href="">icon</a>
 
-    <div class="element">
-        <a href="#" class="btn btn-default">Button</a>
+    <div class="view">
+        <a href="">icon</a>
+        <a href="">icon</a>
     </div>
 
-    <div class="codeline">
-        <div class="pull-right">
-            <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
-            <%= link_to edit_component_path(@component) do %>
-                <i class="icon-pen"></i>
-            <% end %>
-            <a href=""><i class="icon-cancel_circle"></i></a>
+    <a class="btn pull-right">+ Component</a>
+</div>
+
+<div id="component">
+    <div class="row">
+        <h3><%= @component.title %></h3>
+        <span class="edit">
+            <a href="">Edit</a>
+            <a href="">Delete</a>
+        </span>
+        <p><%= @component.description %></p>
+    </div>
+    <div class="row">
+        <div class="element">
+            <%= @component.code %>
         </div>
     </div>
-    <div class="code-details one">
-        <div class="">
+    <div class="code row">
+        <div class="dependency">
             <strong>Dependencies:</strong>
             <%= @component.dependencies %>
-
-        
-            <%= @component.code %>
-        
-
-        <p>
-          <strong>Notes:</strong>
-          <%= @component.notes %>
-        </p>
-
         </div>
+        <textarea id="showcode">
+            <%= @component.code %>
+        </textarea>
     </div>
-    <%= link_to 'Back', components_path %>
+    <div class="notes row">
+        <strong>Notes:</strong>
+          <%= @component.notes %>
+    </div>
 </div>
+
+    
+    
+    
+
+    
+<!-- 
+    <%= link_to 'Back', components_path %>
+ -->

@@ -3,8 +3,10 @@
 <head>
   <title>Quilt</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <%= yield :styleguide_css %>
+
 </head>
 <body class="body">
 	<div class="navbar navbar-fixed-top">
@@ -76,7 +78,7 @@
 						<% end %>
 					</li>
 					<li>
-						<%= link_to new_component_path do %>
+						<%= link_to new_styleguide_path do %>
 	  						<span class="icon"><i class="icon-plus"></i></span> Add New Styleguide
 						<% end %>
 					</li>
@@ -99,6 +101,12 @@
 		<%= yield %>
 
 	</div>
+
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<script type="text/javascript" src="http://codemirror.net/mode/javascript/javascript.js"></script>
+	<script type="text/javascript" src="http://codemirror.net/mode/xml/xml.js"></script>
+	<script type="text/javascript" src="http://codemirror.net/mode/css/css.js"></script>
+	<script type="text/javascript" src="http://codemirror.net/mode/vbscript/vbscript.js"></script>
 
 </body>
 </html>

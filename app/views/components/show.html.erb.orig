@@ -1,0 +1,72 @@
+<<<<<<< HEAD
+<%= css_links @styleguide %>
+=======
+<% arr = @styleguide.css_paths.split(",")
+    content_for :styleguide_css do
+        arr.each do |css_path|
+        %>
+        <%= stylesheet_link_tag css_path %>
+    
+<%  
+        end
+    end %>
+>>>>>>> master
+<h3>
+  <%= @component.title %>
+</h3>
+
+<hr>
+
+<p>
+  <%= @component.description %>
+</p>
+
+<div class="element">
+    <a href="#" class="btn btn-default">Button</a>
+</div>
+
+<div class="codeline">
+    <div class="pull-left">
+        <div class="tags">
+            <a href="">Tag</a>, 
+            <a href="">Tag</a>, 
+            <a href="">Tag</a>
+        </div>
+    </div>
+    <div class="pull-right">
+        <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
+        <%= link_to edit_component_path(@component) do %>
+            <i class="icon-pen"></i>
+        <% end %>
+        <a href=""><i class="icon-cancel_circle"></i></a>
+    </div>
+</div>
+<div class="code-details one">
+    <div class="">
+        <strong>Dependencies:</strong>
+        <%= @component.dependencies %>
+
+    <pre class="prettyprint prettyprinted" >
+        <%= @component.code %>
+    </pre>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= @component.notes %>
+    </p>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<%= link_to 'Back', components_path %>

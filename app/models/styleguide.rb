@@ -16,5 +16,7 @@ class Styleguide
 
   belongs_to :user
 
+  validates_uniqueness_of :title
+
   slug :title
 end
