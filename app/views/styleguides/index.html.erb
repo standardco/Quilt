@@ -9,55 +9,20 @@
 </div>
 <% end %>
 
-<% if @current_user_styleguides != nil %>
-
+<% if @current_user_styleguides %>
 YOUR STYLEGUIDES!
 <div class="guides">
-  <% @current_user_styleguides.each do |styleguide| %>
-  <div class="guide">
-    <div class="area">
-      <% if styleguide.image_url != nil %>
-      <%= image_tag(styleguide.image_url) %>
-      <% end %>
-
-      <h4>102</h4>
-      <p>Components</p>
-    </div>
-    <%= styleguide.title %>
-  <%= styleguide.user._slugs[0] %>
-  <%= link_to 'Show', styleguide.user._slugs[0] +'/'+ styleguide._slugs[0] %>
-  <%= link_to 'Edit', edit_styleguide_path(styleguide) %>
-  <%= link_to 'Destroy', styleguide, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
- 
-<% end %>
+  <%= render(@current_user_styleguides) %>
 </div>
 <% end %>
 
 <br><br>
-<% if @public_styleguides != nil %>
-
+<% if @public_styleguides %>
 PUBLIC STYLEGUIDES!
 <div class="guides">
-  <% @public_styleguides.each do |styleguide| %>
-  <div class="guide">
-    <div class="area">
-      <h4>102</h4>
-      <p>Components</p>
-    </div>
-    <%= styleguide.title %>
-  <%= styleguide.user._slugs[0] %>
-  <%= link_to 'Show', styleguide._slugs[0] %>
-  <%= link_to 'Edit', edit_styleguide_path(styleguide) %>
-  <%= link_to 'Destroy', styleguide, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
- 
-<% end %>
+  <%= render(@public_styleguides) %>
 </div>
 <% end %>
-
-
-
 
 <br clear="all">
 
