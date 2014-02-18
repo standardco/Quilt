@@ -1,0 +1,28 @@
+/* Global header */
+
+$nav-color: #eaebec;
+$brand-color: #f26522;
+
+nav {
+	&.global {
+		background:$nav-color;
+		height:60px;
+		h1 {
+			color: #898989;
+			font-family: 'bebas_neueregular';
+			margin:0;
+			padding:5px;
+			font-size:28px;
+			i {
+				font-size: 44px;
+				color:$brand-color;
+				display:inline;
+			}
+		}
+		.navbtns {
+			float:right;
+			padding:12px;
+			a {margin-left:10px}
+		}
+	}
+}

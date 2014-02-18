@@ -1,15 +1,22 @@
-<div class="home-nav">
-	<div class="icon icon-qlogo"></div>
-	<% if user_signed_in? %>
-		<%= link_to "My Style Guide", @user._slugs[0] %>
-	<% else %>
-		<%= link_to "Sign up", new_user_registration_path %> | 
-		<%= link_to "Login", new_user_session_path %>
-	<% end %>
-</div>
+<nav class="global">
+	<div class="navbtns">
+		<% if user_signed_in? %>
+			<%= link_to "My Style Guides", @user._slugs[0], { :class=>"btn" }  %>
+		<% else %>
+			<%= link_to "Login", new_user_session_path, { :class=>"btn mute" }  %>
+			<%= link_to "Sign up", new_user_registration_path, { :class=>"btn" } %>
+		<% end %>
+	</div>
+	<h1>
+		<i class="icon icon-qlogo"></i> Quilt
+	</h1>
+</nav>
+
+
 <div class="hero">
 	<h1>Build, Communicate, and Show Off Your Styleguide</h1>
 </div>
+
 <div class="marketing">
 	<p>This is marketing content down here.</p>
 </div>

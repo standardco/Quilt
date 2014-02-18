@@ -6,8 +6,6 @@ body {
 
 .body { padding: 70px 0; }
 
-h1, h2, h3, h4, h5, h6 {  }
-
 a { color: #FF6640; }
 a:hover { text-decoration: none }
 a.muted { color: #ccc; }
@@ -15,21 +13,6 @@ a.muted:hover { text-decoration: underline; }
 
 hr { background: #ccc;height: 1px;border: 0; }
 .container { width: 960px; }
-
-.btn { 
-  min-width: 120px;
-  border-radius: 0;color: #fff;background: #00BE20;
-  -webkit-transition: all 500ms ease;
--moz-transition: all 500ms ease;
--ms-transition: all 500ms ease;
--o-transition: all 500ms ease;
-transition: all 500ms ease; }
-.btn.github { background: #333; }
-.btn.github:hover { background: #111; }
-.btn:hover {
-  background: #02AA1A;
-  color: #fff; }
-
 .element { padding: 40px 0;}
 
 .main {
@@ -50,7 +33,6 @@ transition: all 500ms ease; }
 .authentication .or { margin: -30px auto 20px;width: 40px;background: #fff;text-align: center; }
 .authentication .form-group { margin-bottom: 30px; }
 .authentication .links { text-align: center;font-size: 12px; }
-
 
 /*categories*/
 
