@@ -10,9 +10,11 @@
 <body>
 
 	<nav class="global">
-		<h1>
-			<i class="icon icon-qlogo"></i> Quilt
-		</h1>
+		<a class="brandlink" href="/">
+			<h1>
+				<i class="icon icon-qlogo"></i> Quilt
+			</h1>
+		</a>
 
 		<% if user_signed_in? %>
 
@@ -22,16 +24,18 @@
 				<li><a href="">Support</a></li>
 			</ul>	
 
-			<div class="navbtns">
-				<%= link_to destroy_user_session_path, method: :delete, :class => 'logout' do  %>
-					<i class="icon-signout"></i>
-				<% end %>
-			</div>
-
 			<div class="account">
 				<img src="https://0.gravatar.com/avatar/617b2ff79c74484f9ccf0bfc708a4d4c?d=https%3A%2F%2Fidenticons.github.com%2F384b06d890db682156a5779ed82aa985.png&r=x&s=100"/> 
 				<%= current_user.email %> 
 			</div>
+
+			<!-- 		
+			This log out needs to go in a dropdown // adding this later	
+			<div class="navbtns">
+				<%= link_to destroy_user_session_path, method: :delete, :class => 'logout' do  %>
+					<i class="icon-signout"></i>
+				<% end %>
+			</div> -->
 
 		<% end %>
 	</nav>

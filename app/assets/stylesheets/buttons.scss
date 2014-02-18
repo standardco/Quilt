@@ -8,9 +8,19 @@
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease; 
+  color:#fff;
   &.cancel, &.mute {background: #cecece; }
   &.github { 
   	background: #333; 
+  	line-height: 24px;
+  	i {
+  		font-size: 23px;
+		height: 20px;
+		padding: 0px;
+		line-height: 14px;
+		vertical-align: top;
+		margin-right: 16px;
+	}
   	&:hover { background: #111; }
   }
   &:hover {

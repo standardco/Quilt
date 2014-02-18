@@ -9,6 +9,7 @@ nav {
 		background:$nav-color;
 		color:$header-text;
 		height:60px;
+		.brandlink {color:$header-text;}
 		h1 {
 			font-family: 'bebas_neueregular';
 			margin:0;
@@ -26,7 +27,10 @@ nav {
 		.navbtns {
 			float:right;
 			padding:12px;
-			a {margin-left:10px}
+			a {
+				margin-left:10px;color:$header-text;
+				&.btn {color:#fff;}
+			}
 		}
 		ul.mainnav {
 			float:left;

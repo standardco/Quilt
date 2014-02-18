@@ -1,7 +1,9 @@
 <nav class="global">
-	<h1>
-		<i class="icon icon-qlogo"></i> Quilt
-	</h1>
+	<a class="brandlink" href="/">
+		<h1>
+			<i class="icon icon-qlogo"></i> Quilt
+		</h1>
+	</a>
 
 		<% if user_signed_in? %>
 			
@@ -18,7 +20,7 @@
 
 		<% else %>
 			<div class="navbtns">
-				<%= link_to "Login", new_user_session_path, { :class=>"btn mute" }  %>
+				<%= link_to "Login", new_user_session_path %>
 				<%= link_to "Sign up", new_user_registration_path, { :class=>"btn" } %>
 			</div>
 		<% end %>
