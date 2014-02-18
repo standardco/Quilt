@@ -2,13 +2,14 @@
 
 $nav-color: #eaebec;
 $brand-color: #f26522;
+$header-text: #898989;
 
 nav {
 	&.global {
 		background:$nav-color;
+		color:$header-text;
 		height:60px;
 		h1 {
-			color: #898989;
 			font-family: 'bebas_neueregular';
 			margin:0;
 			padding: 7px 10px 0;
@@ -27,11 +28,28 @@ nav {
 			padding:12px;
 			a {margin-left:10px}
 		}
+		ul.mainnav {
+			float:left;
+			list-style:none;
+			margin:0 0 0 100px;
+			padding:0;
+			font-weight:700;
+			li {
+				display:inline;
+				margin:0;
+				a {
+					display:inline-block;color:$header-text;
+					padding:20px;
+					margin:0;
+					&:hover {background:red;}
+					&.active {background:#666}
+				}
+			}
+		}
 		.account {
 			float:right;
 			padding:10px 20px;
 			font-weight:700;
-			color:#808285;
 			img {
 				@include border-radius(50%);
 				border:solid 2px #fff;
