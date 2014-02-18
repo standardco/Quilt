@@ -41,8 +41,8 @@ nav {
 					display:inline-block;color:$header-text;
 					padding:20px;
 					margin:0;
-					&:hover {background:red;}
-					&.active {background:#666}
+					&:hover {text-decoration:underline;}
+					&.active {background:#dadadc}
 				}
 			}
 		}
