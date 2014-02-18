@@ -12,4 +12,7 @@
  *= require_main .
  */
 
- @import 'main';
+@import 'bootstrap';
+@import 'main';
+@import 'fonts';
+@import 'iconset';
