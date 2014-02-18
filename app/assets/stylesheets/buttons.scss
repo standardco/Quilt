@@ -10,6 +10,10 @@
   transition: all 500ms ease; 
   color:#fff;
   &.cancel, &.mute {background: #cecece; }
+  i {
+  	margin-right:5px;
+  	&.icon-plus {vertical-align:middle;}
+  }
   &.github { 
   	background: #333; 
   	line-height: 24px;
