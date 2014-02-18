@@ -29,7 +29,9 @@ nav {
 		}
 		.account {
 			float:right;
-			padding:10px 12px;
+			padding:10px 20px;
+			font-weight:700;
+			color:#808285;
 			img {
 				@include border-radius(50%);
 				border:solid 2px #fff;
