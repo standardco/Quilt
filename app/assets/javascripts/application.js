@@ -45,19 +45,22 @@ $(document).on('ready', function() {
         styleActiveLine: true,
         matchBrackets: true,
         mode: "htmlmixed",
-        readOnly: "nocursor"
+        readOnly: "nocursor",
+        theme: "monokai"
     });
     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
-        mode: "htmlmixed"
+        mode: "htmlmixed",
+        theme: "monokai"
     });
     var editor = CodeMirror.fromTextArea(document.getElementById("dependency"), {
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
-        mode: "htmlmixed"
+        mode: "htmlmixed",
+        theme: "monokai"
     });
     
 });
