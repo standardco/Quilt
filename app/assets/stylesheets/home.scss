@@ -24,12 +24,14 @@
 	p {
 		font-size:18px;
 		color:#666;
-		margin:20px 0 30px;
+		margin:10px 0 30px;
 		font-weight:300;
+		line-height:1.5em;
 	}
 }
 .marketing {
-	p { text-align: left;margin-top: 40px;font-weight:300;font-size:16px; }
+	h3 {margin-top:80px}
+	p { text-align: left;margin-top: 20px;font-weight:300;font-size:16px; }
 	.row {
 		padding-top:40px;
 		padding-bottom:40px;
