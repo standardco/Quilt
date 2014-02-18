@@ -1,0 +1,43 @@
+/* Home Classes
+-----------------------------------------*/
+
+.hero { 
+	border-bottom: 1px solid #F1F2F2;padding: 220px 0 300px; 
+	height: 700px;
+	text-align: center;
+	padding: 220px 0;
+	background-size: 2000px auto;
+	background-attachment: fixed;
+	background-position: center top;
+	background-repeat: no-repeat;
+	margin-top: -200px;
+	line-height: .8em;
+	background-color: #dedede;
+	background-image:url(asset-path('home_bg.jpg'));
+	h1 { 
+		text-align: center; 
+		font-weight:300;
+		margin-top: 100px;
+		font-size: 47px;
+		color:#444;		
+	}
+	p {
+		font-size:18px;
+		color:#666;
+		margin:20px 0 30px;
+		font-weight:300;
+	}
+}
+.marketing {
+	p { text-align: left;margin-top: 40px;font-weight:300;font-size:16px; }
+	.row {
+		padding-top:40px;
+		padding-bottom:40px;
+		margin:0;
+		&.accent {background:#f7f9f9}
+		img {
+			max-width:390px;
+			width:100%;
+		}
+	}
+}

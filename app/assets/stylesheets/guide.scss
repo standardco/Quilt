@@ -1,0 +1,47 @@
+/* styleguide styles*/
+
+.new-guide {
+  display: table;
+  width: 100%;
+}
+.no-guide {
+  background: #f2f2f2;
+  margin: 20px 0;
+  padding: 10px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.guides .guide {
+  width: 170px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: block;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+.guides .guide:nth-child(5n + 0) {
+  margin-right: -30px;
+}
+.guides .guide .area { background: #f2f2f2;
+  height: 210px;
+  padding: 70px 0; }
+
+
+/*.styleguide-form .categories .new-category { margin-bottom: 40px; }
+.styleguide-form .categories .category { margin-bottom: 10px;
+}
+.styleguide-form .categories .category .clear {
+  float: right;
+  color: #fff;
+  margin: -28px 10px 0;
+  padding: 0px 6px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+.styleguide-form .categories .category .clear:hover {
+  background: #FF6640;
+}*/
+
+

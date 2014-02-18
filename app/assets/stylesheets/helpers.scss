@@ -1,0 +1,14 @@
+/* Helper Classes
+-----------------------------------------*/
+.hide { display: none; }
+.visible {visibility: visible; }
+.bold {font-weight: bold; }
+.show { visibility: visible !important; }
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}

@@ -1,0 +1,32 @@
+/* Nav Classes
+-----------------------------------------*/
+.navbar { width: 100%;min-height: 65px;border-top: 3px solid #F7F7F7;min-height: 75px; }
+.navbar .nav { width: 100%; }
+
+.navbar-nav > li { float: none; }
+.navbar-nav > li > ul.components { list-style-type: none;padding-left: 40px; }
+.navbar-nav > li > ul.components li a.comp-link { color: #f2f2f2;padding: 10px 15px;display: block;border-bottom: 1px solid #444;font-size: 13px; }
+.navbar-nav > li > ul.components li a.comp-link:hover { background-color: #444; }
+.navbar-nav > li > ul.components li a.edit-link { display: inline-block;margin: -32px 10px 0 0;float: right;color: #f2f2f2; }
+.navbar-nav > li > ul.components li a.edit-link:hover { color: #999; }
+
+.navbar-nav > li > a { color: #f2f2f2;font-size: 13px;border-bottom: 1px solid #444; }
+.navbar-nav > li > a .icon i { font-size: 16px;margin-right: 8px; }
+.navbar-nav > li > a:hover, .nav > li > a:focus { text-decoration: none;background-color: #444; }
+.logout { color: #f2f2f2;margin-left: 10px;font-size: 14px; }
+
+/*Nav left*/
+.logo img { width: 40px; }
+.nav-offpage-left { display: inline-block;margin: 15px 10px 15px 25px; }
+.nav-offpage-left img {width: 24px;margin: 8px 0; }
+.nav-offpage-left:hover { text-decoration: none; }
+
+.offpage-left { width: 240px;height: 100%;background: #333;color: #fff;position: fixed;top: 0;bottom: 0;left: -240px;-webkit-transition: -webkit-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);-moz-transition: -moz-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);-o-transition: -o-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);transition: transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9); }
+
+.offpage-left .branding { background: #444;text-align: center;padding: 5px;border-bottom: 1px solid #333; }
+.offpage-left .branding .brand { border-bottom: 1px solid #f2f2f2;margin: 0 40px;font-size: 14px; }
+.offpage-left .branding .brand .header { font-family: 'bebas_neueregular', Arial, sans-serif;font-size: 36px;vertical-align: middle; }
+.offpage-left .branding .email { margin-top: 5px;font-size: 12px; }
+
+.push-left .offpage-left { -webkit-transform: translate3d(240px, 0, 0);transform: translate3d(240px, 0, 0); }
+.push-left .main { width: 100%;-webkit-transform: translate3d(240px, 0, 0);transform: translate3d(240px, 0, 0); }

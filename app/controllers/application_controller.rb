@@ -15,9 +15,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def component_tags
-    #@styleguide = Styleguide.find(params[:styleguide])
-    puts params
-    puts "tjmueh"
   	@components = Component.all
   end
   def get_resources

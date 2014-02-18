@@ -1,9 +1,14 @@
-<!-- 
-<% arr = @styleguide.css_paths.split(",") 
-    arr.each do |css_path| %>
-    <%= stylesheet_link_tag css_path %>   
+
+<%= css_links @styleguide %>
+    <% content_for :styleguide_css do
+        arr = @styleguide.css_paths.split(",")
+        arr.each do |css_path|
+    %>
+        <%= stylesheet_link_tag css_path %>
+    <% end %>
 <% end %>
- -->
+
+
 
 <div class="styleguide-header row">
     <h2>Guide Name</h2>
@@ -39,7 +44,7 @@
             <%= @component.dependencies %>
         </div>
         <textarea id="showcode">
-            <%= @component.code %>
+            <%= @component.code.html_safe %>
         </textarea>
     </div>
     <div class="notes row">
