@@ -1,15 +1,71 @@
-<div class="home-nav">
-	<% if user_signed_in? %>
-		<%= link_to "My Style Guide", @user._slugs[0] %>
-	<% else %>
-		<%= link_to "Sign up", new_user_registration_path %> | 
-		<%= link_to "Login", new_user_session_path %>
-	<% end %>
-</div>
+<nav class="global">
+	<a class="brandlink" href="/">
+		<h1>
+			<i class="icon icon-qlogo"></i> Quilt
+		</h1>
+	</a>
+
+		<% if user_signed_in? %>
+			
+			<ul class="mainnav">
+				<li><%= link_to "Styleguides", @user._slugs[0] %></li>
+				<li><a href="">Team</a></li>
+				<li><a href="">Support</a></li>
+			</ul>	
+
+			<div class="account">
+				<img src="https://0.gravatar.com/avatar/617b2ff79c74484f9ccf0bfc708a4d4c?d=https%3A%2F%2Fidenticons.github.com%2F384b06d890db682156a5779ed82aa985.png&r=x&s=100"/> 
+				<%= current_user.email %> 
+			</div>
+
+		<% else %>
+			<div class="navbtns">
+				<%= link_to "Login", new_user_session_path %>
+				<%= link_to "Sign up", new_user_registration_path, { :class=>"btn" } %>
+			</div>
+		<% end %>
+
+</nav>
+
+
 <div class="hero">
-	<h1>Build, Communicate, and Show Off Your Styleguide</h1>
+	<h1>Dynamic Styleguides</h1>
+	<p>Spend time building your app. Not your styleguide. Collaborate, share, and keep your team aligned.</p>
+	<p>
+		<%= link_to "Sign Up for Free", new_user_registration_path, { :class=>"btn large" } %>
+	</p>
 </div>
-<div class="marketing">
-	<p>This is marketing content down here.</p>
+
+<div class="marketing container-fluid">
+	<div class="row">
+		<div class="col-sm-5">
+			<%= image_tag("home_preview1.png") %>
+		</div>
+		<div class="col-sm-7">
+			<p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum elit, eu euismod magna sapien ut nibh. Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea.
+			</p>
+			<p><a class="btn" href="#">Learn More</a></p>
+		</div>
+	</div>
+	<div class="row accent">
+		<div class="col-sm-5">
+			<%= image_tag("home_preview2.png") %>
+		</div>
+		<div class="col-sm-7">
+			<p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum elit, eu euismod magna sapien ut nibh. Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea.
+			</p>
+			<p><a class="btn" href="#">Learn More</a></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-5">
+			<%= image_tag("home_preview1.png") %>
+		</div>
+		<div class="col-sm-7">
+			<p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum elit, eu euismod magna sapien ut nibh. Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea.
+			</p>
+			<p><a class="btn" href="#">Learn More</a></p>
+		</div>
+	</div>		
 </div>
 

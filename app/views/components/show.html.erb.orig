@@ -1,15 +1,16 @@
+<<<<<<< HEAD
 <%= css_links @styleguide %>
-<% 
+=======
+<% arr = @styleguide.css_paths.split(",")
     content_for :styleguide_css do
-    arr = @styleguide.css_paths.split(",")
-
-    arr.each do |css_path|
-    %>
-    <%= stylesheet_link_tag css_path %>
+        arr.each do |css_path|
+        %>
+        <%= stylesheet_link_tag css_path %>
     
-<% end %>
-<% end %>
-
+<%  
+        end
+    end %>
+>>>>>>> master
 <h3>
   <%= @component.title %>
 </h3>
@@ -20,7 +21,9 @@
   <%= @component.description %>
 </p>
 
-
+<div class="element">
+    <a href="#" class="btn btn-default">Button</a>
+</div>
 
 <div class="codeline">
     <div class="pull-left">
@@ -44,7 +47,7 @@
         <%= @component.dependencies %>
 
     <pre class="prettyprint prettyprinted" >
-        <%= @component.code.html_safe %>
+        <%= @component.code %>
     </pre>
 
     <p>

@@ -84,6 +84,7 @@ class StyleguidesController < ApplicationController
     def set_styleguide
       @styleguide = Styleguide.find(params[:styleguide])
       @owner = @styleguide.user
+      @components = Component.where(styleguide_id: @styleguide.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
