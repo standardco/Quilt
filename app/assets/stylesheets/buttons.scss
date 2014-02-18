@@ -9,6 +9,7 @@
   -o-transition: all 500ms ease;
   transition: all 500ms ease; 
   color:#fff;
+  &.large {padding:10px 40px;font-size:18px;}
   &.cancel, &.mute {background: #cecece; }
   i {
   	margin-right:5px;
