@@ -12,8 +12,13 @@
  *= require_main .
  */
 
+@import 'bootstrap';
 @import 'fonts';
 @import 'iconset';
-@import 'bootstrap';
 @import 'main';
+@import 'helpers';
+@import 'nav';
+@import 'forms';
+@import 'guide';
+@import 'home';
 

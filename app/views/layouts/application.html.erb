@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   	<title>Quilt</title>
-  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  	<%= stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true %>
   	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   	<%= csrf_meta_tags %>
 	<%= yield :styleguide_css %>
@@ -12,7 +12,6 @@
 		<div class="main">
 			<div class="left">
 				<a href="#" class="nav-offpage-left"><%= image_tag("menu.png") %></a>
-
 				<% if user_signed_in? %>
 					<%= link_to image_tag("quilt.png"), components_path, :class => "logo" %>
 				<% else %>
@@ -31,8 +30,6 @@
 					</p>
 				<% end %>
 			</div>
-
-			
 			<ul class="nav navbar-nav">
 				<% if user_signed_in? %>
 
