@@ -15,7 +15,7 @@
 
 			<div class="account">
 				<img src="https://0.gravatar.com/avatar/617b2ff79c74484f9ccf0bfc708a4d4c?d=https%3A%2F%2Fidenticons.github.com%2F384b06d890db682156a5779ed82aa985.png&r=x&s=100"/> 
-				<%= current_user.email %> 
+				<%= current_user.email %> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 			</div>
 
 		<% else %>
@@ -43,7 +43,7 @@
 			<%= image_tag("home_preview1.png") %>
 		</div>
 		<div class="col-sm-7">
-			<h3>Dynamically generate your styleguide.</h3>
+			<h3>Dynamically generated.</h3>
 			<p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum elit, eu euismod magna sapien ut nibh. Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea.
 			</p>
 			<p><a class="btn" href="#">Learn More</a></p>

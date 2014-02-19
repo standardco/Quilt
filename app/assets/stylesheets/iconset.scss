@@ -24,7 +24,7 @@
 @font-face {
     font-family: 'mfg_labs_iconsetregular';
     src: asset-url('mfglabsiconset-webfont.eot');
-    src: uasset-url('mfglabsiconset-webfont.eot?#iefix') format('embedded-opentype'),
+    src: asset-url('mfglabsiconset-webfont.eot?#iefix') format('embedded-opentype'),
          asset-url('mfglabsiconset-webfont.woff') format('woff'),
          asset-url('mfglabsiconset-webfont.ttf') format('truetype'),
          asset-url('mfglabsiconset-webfont.svg#mfg_labs_iconsetregular') format('svg');
