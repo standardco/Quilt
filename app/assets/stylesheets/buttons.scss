@@ -20,11 +20,12 @@
   	line-height: 24px;
   	i {
   		font-size: 23px;
-		height: 20px;
-		padding: 0px;
-		line-height: 14px;
-		vertical-align: top;
-		margin-right: 16px;
+      display:inline-block;
+		  height: 24px;
+		  padding: 0px;
+		  line-height: 14px;
+		  vertical-align: top;
+		  margin-right: 16px;
 	}
   	&:hover { background: #111; }
   }
