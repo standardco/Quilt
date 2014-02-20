@@ -46,6 +46,7 @@ class User
 	field :uid, :type => String
 	field :name, :type => String
 	field :username, :type => String
+	field :is_temp_user, :type => Integer
 
 	slug :username
 
@@ -55,16 +56,31 @@ class User
 
 	def self.find_for_github_oauth(auth, signed_in_resource=nil)
 		
-		user = User.where(:provider => auth.provider, :uid => auth.uid).first
+		provider = "github"
+
+		user = User.where(:provider => provider, :uid => auth.uid).first
 		unless user
-			puts "alfiessss"
+
+			is_temp_user = 0
+			# sometimes github doesn't return email address or name. if that's the case
+			# randomly generate email and username as temporary holding vars. 
+			# we'll then redirect the user to the settings page to "finish" registration
+			if (auth.email == nil || auth.email == "")
+				username = rand(10000..1000000).to_s
+				email = username + "@tempmail.com"
+				is_temp_user = 1
+			end
+
 			user = User.create(name:auth.extra.raw_info.name,
-			                     provider:auth.provider,
+			                     provider:provider,
 			                     uid:auth.uid,
-			                     email:auth.info.email,
-			                     password:Devise.friendly_token[0,20]
+			                     is_temp_user:is_temp_user,
+			                     email:email,
+			                     password:Devise.friendly_token[0,20],
+			                     username:username
+			                     
 			                     )
-		
+
 		end
 
 		user

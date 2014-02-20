@@ -2,7 +2,7 @@ Quilt::Application.routes.draw do
 
   get "/welcome/index", to: "welcome#index"
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+  devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" } do
 
   end
   
@@ -73,6 +73,5 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
 
 

@@ -1,40 +1,47 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-  <title>Quilt</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  	<title>Quilt</title>
+  	<%= stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true %>
+  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= csrf_meta_tags %>
 	<%= yield :styleguide_css %>
-
 </head>
-<body class="body">
-	<div class="navbar navbar-fixed-top">
-		<div class="main">
-			
-			<div class="left">
-				<a href="#" class="nav-offpage-left"><%= image_tag("menu.png") %></a>
+<body>
 
-				<% if user_signed_in? %>
-					<%= link_to image_tag("quilt.png"), components_path, :class => "logo" %>
-				<% else %>
-					<%= link_to image_tag("quilt.png"), root_path, :class => "logo" %>
-				<% end %>
+	<nav class="global">
+		<a class="brandlink" href="/">
+			<h1>
+				<i class="icon icon-qlogo"></i> Quilt
+			</h1>
+		</a>
+
+		<% if user_signed_in? %>
+
+			<ul class="mainnav">
+				<li><a class="active" href="#">Styleguides</a></li>
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Support</a></li>
+			</ul>	
+
+			<div class="account">
+				<img src="https://0.gravatar.com/avatar/617b2ff79c74484f9ccf0bfc708a4d4c?d=https%3A%2F%2Fidenticons.github.com%2F384b06d890db682156a5779ed82aa985.png&r=x&s=100"/> 
+				<%= current_user.email %> 
 			</div>
-		</div>
+
+			<!-- 		
+			This log out needs to go in a dropdown // adding this later	
+			<div class="navbtns">
+				<%= link_to destroy_user_session_path, method: :delete, :class => 'logout' do  %>
+					<i class="icon-signout"></i>
+				<% end %>
+			</div> -->
+
+		<% end %>
+	</nav>
+
+	<div>
 		<div class="offpage-left">
-			<div class="branding">
-				<p class="brand"><span class="header">Quilt</span></p>
-				<% if user_signed_in? %>
-					<p class="email"><%= current_user.email %> 
-					<%= link_to destroy_user_session_path, method: :delete, :class => 'logout' do  %>
-						<i class="icon-signout"></i>
-					<% end %>
-					</p>
-				<% end %>
-			</div>
-
-			
 			<ul class="nav navbar-nav">
 				<% if user_signed_in? %>
 
