@@ -6,7 +6,7 @@ Quilt::Application.routes.draw do
 
   end
 
-  get '/:user', to: 'styleguides#index'
+  get '/:user', to: 'styleguides#index', as: :user
   get '/:user/:styleguide', to: 'styleguides#show', as: :styleguide
   get '/:user/:styleguide/edit', to: 'styleguides#edit', as: :edit_styleguide
   get '/:user/styleguides/new', to: 'styleguides#new', as: :new_styleguide

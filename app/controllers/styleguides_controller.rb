@@ -11,16 +11,17 @@ class StyleguidesController < ApplicationController
     #@styleguides = Styleguide.all
     @current_user_styleguides = Styleguide.where(:user_id => @user.id).order_by(:created_at => "desc")
     @public_styleguides = Styleguide.where(:is_public => "yes")
-
   end
 
-  # GET /styleguides/1
-  # GET /styleguides/1.json
+  # GET /:user/:styleguide
+  # GET /:user/:styleguide.json
   def show
+    @user = current_user
   end
 
-  # GET /styleguides/new
+  # GET /:user/styleguides/new
   def new
+    @user = current_user
     @styleguide = Styleguide.new
   end
 
@@ -82,7 +83,7 @@ class StyleguidesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_styleguide
-      @styleguide = Styleguide.find(params[:styleguide_id])
+      @styleguide = Styleguide.find(params[:styleguide])
       @owner = @styleguide.user
       @components = Component.where(styleguide_id: @styleguide.id)
     end
