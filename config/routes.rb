@@ -8,13 +8,11 @@ Quilt::Application.routes.draw do
 
   get '/:user', to: 'styleguides#index', as: :user
   get '/:user/:styleguide', to: 'styleguides#show', as: :styleguide
-  get '/:user/:styleguide/edit', to: 'styleguides#edit', as: :edit_styleguide
   get '/:user/styleguides/new', to: 'styleguides#new', as: :new_styleguide
-  get '/:user/:styleguide/:component', to: 'components#show'
-  get '/:user/:styleguide/:component/edit', to: 'components#edit'
+  delete '/:user/:styleguide', to: 'styleguides#destroy'
+  get '/:user/:styleguide/:component', to: 'components#show', as: :component
+  get '/:user/:styleguide/components/new', to: 'components#new', as: :new_component
   delete '/:user/:styleguide/:component', to: 'components#destroy'
-
-  resources :components
 
 end
 

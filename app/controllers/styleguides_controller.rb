@@ -16,7 +16,6 @@ class StyleguidesController < ApplicationController
   # GET /:user/:styleguide
   # GET /:user/:styleguide.json
   def show
-    @user = current_user
   end
 
   # GET /:user/styleguides/new
@@ -25,7 +24,7 @@ class StyleguidesController < ApplicationController
     @styleguide = Styleguide.new
   end
 
-  # GET /styleguides/1/edit
+  # GET /:user/:styleguide/edit
   def edit
   end
 
@@ -83,6 +82,7 @@ class StyleguidesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_styleguide
+      @user = current_user
       @styleguide = Styleguide.find(params[:styleguide])
       @owner = @styleguide.user
       @components = Component.where(styleguide_id: @styleguide.id)
@@ -90,7 +90,6 @@ class StyleguidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def styleguide_params
-      params.require(:styleguide).permit(:title, :user_id, :url, :description, :categories, :css_paths, :image_url,
-                                          :is_public)
+      params.require(:styleguide).permit(:title, :user_id, :url, :description, :categories, :css_paths, :image_url, :is_public)
     end
 end

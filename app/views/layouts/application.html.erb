@@ -51,21 +51,21 @@
 						<% end %>
 					</li>
 					<li>
-						<%= link_to components_path do %>
+						<a href="#">
 							<span class="icon"><i class="icon-globe"></i></span> Component
-						<% end %>
+						</a>
 					</li>
 					
 					<li>
 						<ul class="components">
 							<% @components.each do |component| %>
 								<li>
-									<%= link_to component, 'class' => 'comp-link' do %>
+									<a href="#" class="comp-link">
 										<%= component.title %>
-									<% end %>
-									<%= link_to edit_component_path(component), 'class' => 'edit-link' do %>
+									</a>
+									<a href="#" class="edit-link">
 										<span class="icon"><i class="icon-pen"></i></span>
-									<% end %>
+									</a>
 								</li>
 							<% end %>
 							<!-- <li><a href="post">Grid <span class="icon"><i class="icon-pen"></i></span></a></li>
@@ -80,9 +80,9 @@
 						</ul>
 					</li>
 					<li>
-						<%= link_to new_component_path do %>
+						<a href="#">
 	  						<span class="icon"><i class="icon-plus"></i></span> Add New Component
-						<% end %>
+						</a>
 					</li>
 					<li>
 						<%= link_to new_styleguide_path(@user) do %>

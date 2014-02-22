@@ -32,7 +32,7 @@
     </div>
     <div class="pull-right">
         <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
-        <%= link_to edit_component_path(@component) do %>
+        <%= link_to component_path(@user, @styleguide, @component) do %>
             <i class="icon-pen"></i>
         <% end %>
         <a href=""><i class="icon-cancel_circle"></i></a>

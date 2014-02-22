@@ -14,6 +14,7 @@ class ComponentsController < ApplicationController
   # GET /components/1
   # GET /components/1.json
   def show
+    @component = Component.new
   end
 
   def 
@@ -117,6 +118,8 @@ class ComponentsController < ApplicationController
     end
     
     def set_component
+      @user = current_user
+      @styleguide = Styleguide.find(params[:styleguide])
       @component = Component.find(params[:component])
     end
 
