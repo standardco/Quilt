@@ -82,7 +82,7 @@ class StyleguidesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_styleguide
-      @styleguide = Styleguide.find(params[:styleguide])
+      @styleguide = Styleguide.find(params[:styleguide_id])
       @owner = @styleguide.user
       @components = Component.where(styleguide_id: @styleguide.id)
     end
