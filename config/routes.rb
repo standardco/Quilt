@@ -1,18 +1,16 @@
 Quilt::Application.routes.draw do
 
-  get "/welcome/index", to: "welcome#index"
+  root :to => "welcome#index"
 
   devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" } do
 
   end
-  
-  root :to => "welcome#index"
 
-  match '/:user' => "styleguides#index",:via => [:get]
-  match '/:user/:styleguide' => "styleguides#show",:via => [:get]
-  match '/:user/:styleguide/:component' => "components#show",:via => [:get]
-  match '/:user/:styleguide/:component/edit' => "components#edit",:via => [:get]
-  match '/:user/:styleguide/:component' => "components#destroy", :via => [:delete]
+  get '/:user', to: 'styleguides#index'
+  get '/:user/:styleguide', to: 'styleguides#show'
+  get '/:user/:styleguide/:component', to: 'components#show'
+  get '/:user/:styleguide/:component/edit', to: 'components#edit'
+  delete '/:user/:styleguide/:component', to: 'components#destroy'
 
   resources :styleguides
   resources :components
