@@ -23,9 +23,9 @@
     </div>
     <div class="pull-right">
         <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
-        <%= link_to component_path(@user, @styleguide, @component) do %>
+        <a href="#">
             <i class="icon-pen"></i>
-        <% end %>
+        </a>
         <a href=""><i class="icon-cancel_circle"></i></a>
     </div>
 </div>
@@ -34,7 +34,7 @@
         <strong>Dependencies:</strong>
         <%= @component.dependencies %>
         <pre class="prettyprint prettyprinted" >
-            <%= @component.code.html_safe %>
+            <%= @component.code %>
         </pre>
         <p>
           <strong>Notes:</strong>
@@ -43,4 +43,4 @@
     </div>
 </div>
 <br><br>
-<%= link_to 'Back', @styleguide %>
+<%= link_to 'Back', styleguide_path(@user, @styleguide) %>

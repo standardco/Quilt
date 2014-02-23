@@ -20,8 +20,7 @@
     <%= component.code %>
   </p>
   <p>
-    <%= link_to 'Show', component.styleguide._slugs[0] + '/' + component._slugs[0] %>
-    <%= link_to 'Edit', component.styleguide._slugs[0] + '/' + component._slugs[0] + '/edit' %>
-    <%= link_to 'Destroy', component.styleguide._slugs[0] + '/' + component._slugs[0], method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Show', component_path(@user, @styleguide, component) %>
+    <%= link_to 'Destroy', component_path(@user, @styleguide, component), method: :delete, data: { confirm: 'Are you sure?' } %>
   </p>
 </div>

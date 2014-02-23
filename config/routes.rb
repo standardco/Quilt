@@ -6,12 +6,15 @@ Quilt::Application.routes.draw do
 
   end
 
+  get '/:user', to: 'styleguides#index', as: :user
   get '/:user', to: 'styleguides#index', as: :styleguides
   get '/:user/:styleguide', to: 'styleguides#show', as: :styleguide
   get '/:user/styleguides/new', to: 'styleguides#new', as: :new_styleguide
   delete '/:user/:styleguide', to: 'styleguides#destroy'
+  get '/:user/:styleguide', to: 'styleguides#show', as: :components
   get '/:user/:styleguide/:component', to: 'components#show', as: :component
   get '/:user/:styleguide/components/new', to: 'components#new', as: :new_component
+  post '/:user/:styleguide', to: 'components#create'
   delete '/:user/:styleguide/:component', to: 'components#destroy'
 
 end

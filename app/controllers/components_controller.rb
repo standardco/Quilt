@@ -62,6 +62,8 @@ class ComponentsController < ApplicationController
 
   # GET /components/new
   def new
+    @user = current_user
+    @styleguide = Styleguide.find(params[:styleguide])
     @component = Component.new
   end
 
@@ -72,13 +74,15 @@ class ComponentsController < ApplicationController
   # POST /components
   # POST /components.json
   def create
+    puts "COMPONENT CREATE!!!"
+    @styleguide = Styleguide.find(params[:styleguide])
     @component = Component.new(component_params)
     @component.user_id = current_user.id
     @component.styleguide_id = params[:styleguide_id]
 
     respond_to do |format|
       if @component.save
-        format.html { redirect_to get_component_path, notice: 'Component was successfully created.' }
+        format.html { redirect_to styleguide_path(current_user, @styleguide), notice: 'Component was successfully created.' }
         format.json { render action: 'show', status: :created, location: @component }
       else
         format.html { render action: 'new' }
@@ -92,7 +96,7 @@ class ComponentsController < ApplicationController
   def update
     respond_to do |format|
       if @component.update(component_params)
-        component_path = get_component_path
+        component_path = @component
         format.html { redirect_to component_path, notice: 'Component was successfully updated.' }
         format.json { head :no_content }
       else
