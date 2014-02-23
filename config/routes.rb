@@ -19,6 +19,7 @@ Quilt::Application.routes.draw do
   get '/:user/:styleguide/:component/edit', to: 'components#edit', as: :edit_component
   get '/:user/:styleguide/components/new', to: 'components#new', as: :new_component
   post '/:user/:styleguide', to: 'components#create'
+  put '/:user/:styleguide/:component', to: 'components#update'
   delete '/:user/:styleguide/:component', to: 'components#destroy'
 
 end
