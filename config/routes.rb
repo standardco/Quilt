@@ -6,7 +6,7 @@ Quilt::Application.routes.draw do
 
   end
 
-  get '/:user', to: 'styleguides#index', as: :user
+  get '/:user', to: 'styleguides#index', as: :styleguides
   get '/:user/:styleguide', to: 'styleguides#show', as: :styleguide
   get '/:user/styleguides/new', to: 'styleguides#new', as: :new_styleguide
   delete '/:user/:styleguide', to: 'styleguides#destroy'
