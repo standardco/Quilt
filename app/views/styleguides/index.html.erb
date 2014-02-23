@@ -3,7 +3,7 @@
     <i class="icon icon-plus"></i>New Styleguide
   <% end %>
 </div>
-<% if @current_user_styleguides == nil %>
+<% if @user_styleguides == nil %>
 <div class="no-guide">
     <img src="http://placehold.it/150x150" />
     <h2>Welcome to Quilt</h2>
@@ -11,10 +11,10 @@
 </div>
 <% end %>
 
-<% if @current_user_styleguides %>
+<% if @user_styleguides %>
 YOUR STYLEGUIDES!
 <div class="guides">
-  <%= render(@current_user_styleguides) %>
+  <%= render(@user_styleguides) %>
 </div>
 <% end %>
 

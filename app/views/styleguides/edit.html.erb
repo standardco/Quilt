@@ -1,6 +1,8 @@
 <h1>Editing styleguide</h1>
 
-<%= render 'form' %>
+<%= form_for @styleguide, url: styleguide_path(@user), html: { method: :put } do |f|
+  <%= render 'form', f: f %>
+<% end %>
 
 <%= link_to 'Show', @styleguide %> |
-<%= link_to 'Back', styleguides_path %>
+<%= link_to 'Back', @user %>

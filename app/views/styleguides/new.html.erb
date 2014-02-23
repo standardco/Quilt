@@ -1,8 +1,10 @@
 <div class="styleguide-form row">
     <div class="col-sm-8">
     	<h1>Create new styleguide</h1>
-		<%= render 'form' %>
-		<%= link_to 'Cancel', styleguides_path, :class => "cancel muted" %>
+        <%= form_for @styleguide, url: new_styleguide_path(@user), html: { method: :post } do |f| %>
+		  <%= render 'form', f: f %>
+        <% end %>
+		<%= link_to 'Cancel', @user, :class => "cancel muted" %>
     </div>
     <div class="col-sm-4">
     	<h3>Suggested Categories</h3>

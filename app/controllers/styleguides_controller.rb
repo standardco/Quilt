@@ -7,9 +7,7 @@ class StyleguidesController < ApplicationController
   # GET /styleguides.json
   def index
     @user = current_user
-    # changed to return just a given user's styleguides
-    #@styleguides = Styleguide.all
-    @current_user_styleguides = Styleguide.where(:user_id => @user.id).order_by(:created_at => "desc")
+    @user_styleguides = Styleguide.where(:user_id => @user.id).order_by(:created_at => "desc")
     @public_styleguides = Styleguide.where(:is_public => "yes")
   end
 
@@ -28,8 +26,8 @@ class StyleguidesController < ApplicationController
   def edit
   end
 
-  # POST /styleguides
-  # POST /styleguides.json
+  # POST /:user/styleguides
+  # POST /:user/styleguides.json
   def create
     @styleguide = Styleguide.new(styleguide_params)
     @user = current_user
@@ -48,8 +46,8 @@ class StyleguidesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /styleguides/1
-  # PATCH/PUT /styleguides/1.json
+  # PATCH/PUT /:user/:styleguide
+  # PATCH/PUT /:user/:styleguide.json
   def update
     respond_to do |format|
       if @styleguide.update(styleguide_params)
@@ -64,8 +62,8 @@ class StyleguidesController < ApplicationController
     end
   end
 
-  # DELETE /styleguides/1
-  # DELETE /styleguides/1.json
+  # DELETE /:user/:styleguide
+  # DELETE /:user/:styleguide.json
   def destroy
     @styleguide.destroy
     respond_to do |format|
@@ -75,7 +73,6 @@ class StyleguidesController < ApplicationController
   end
 
   def path_to_styleguide
-
     "here"
   end
 
