@@ -51,8 +51,6 @@ class StyleguidesController < ApplicationController
   def update
     respond_to do |format|
       if @styleguide.update(styleguide_params)
-        styleguide_path = '/' + @styleguide.user._slugs[0] + '/' + @styleguide._slugs[0]
-
         format.html { redirect_to styleguide_path, notice: 'Styleguide was successfully updated.' }
         format.json { head :no_content }
       else
@@ -70,10 +68,6 @@ class StyleguidesController < ApplicationController
       format.html { redirect_to styleguides_url }
       format.json { head :no_content }
     end
-  end
-
-  def path_to_styleguide
-    "here"
   end
 
   private

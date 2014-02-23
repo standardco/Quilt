@@ -86,7 +86,7 @@
 					</li>
 					<li>
 						<%= link_to new_styleguide_path(@user) do %>
-	  						<span class="icon"><i class="icon-plus"></i></span> Add New Styleguide
+	  					<span class="icon"><i class="icon-plus"></i></span> Add New Styleguide
 						<% end %>
 					</li>
 				<% else %>
@@ -96,18 +96,11 @@
 			</ul> 
 		</div>
 	</div>
-
 	<div class="main container">
-		<% if flash[:notice] %>
-			<p class="notice"><%= notice %></p>
-		<% end %>
 		<% if flash[:alert] %>
-       		<p class="alert"><%= alert %></p>
-       	<% end %>
-
+   		<p class="alert"><%= alert %></p>
+   	<% end %>
 		<%= yield %>
-
 	</div>
-
 </body>
 </html>
