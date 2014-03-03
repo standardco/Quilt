@@ -23,11 +23,11 @@
 
 @font-face {
     font-family: 'mfg_labs_iconsetregular';
-    src: url('font/mfglabsiconset-webfont.eot');
-    src: url('font/mfglabsiconset-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/mfglabsiconset-webfont.woff') format('woff'),
-         url('font/mfglabsiconset-webfont.ttf') format('truetype'),
-         url('font/mfglabsiconset-webfont.svg#mfg_labs_iconsetregular') format('svg');
+    src: asset-url('mfglabsiconset-webfont.eot');
+    src: asset-url('mfglabsiconset-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('mfglabsiconset-webfont.woff') format('woff'),
+         asset-url('mfglabsiconset-webfont.ttf') format('truetype'),
+         asset-url('mfglabsiconset-webfont.svg#mfg_labs_iconsetregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -226,11 +226,11 @@ i, .icon {
 
 @font-face {
   font-family: "quilt";
-  src:url("font/quilt.eot");
-  src:url("font/quilt.eot?#iefix") format("embedded-opentype"),
-    url("font/quilt.woff") format("woff"),
-    url("font/quilt.ttf") format("truetype"),
-    url("font/quilt.svg#quilt") format("svg");
+  src:asset-url("quilt.eot");
+  src:asset-url("quilt.eot?#iefix") format("embedded-opentype"),
+    asset-url("quilt.woff") format("woff"),
+    asset-url("quilt.ttf") format("truetype"),
+    asset-url("quilt.svg#quilt") format("svg");
   font-weight: normal;
   font-style: normal;
 

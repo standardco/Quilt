@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
 
 <p>
   <strong>Title:</strong>
@@ -36,7 +38,7 @@
         <p>Manually add components using Quilt's online webform</p>
       </div>
       <div class="go">
-        <%= link_to "Go", new_component_path + '?styleguide_id=' + @styleguide.id, :class => "btn" %>
+        <%= link_to "Go", new_component_path(@user, @styleguide), :class => "btn" %>
       </div>
     </div>
     <div class="choose">

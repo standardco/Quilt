@@ -10,7 +10,7 @@ development:
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
-        - ec2-54-196-145-170.compute-1.amazonaws.com:27017
+        - ec2-50-17-117-247.compute-1.amazonaws.com:27017
         #- 127.0.0.1:27017
       options:
         # Change the default write concern. (default = { w: 1 })

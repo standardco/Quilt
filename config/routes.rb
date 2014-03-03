@@ -1,23 +1,26 @@
 Quilt::Application.routes.draw do
 
-  get "/welcome/index", to: "welcome#index"
-  get "/components/upload"
-  post "/components/upload_html"
-  get "/components/github"
-
-  resources :styleguides
-  resources :components
+  root :to => "welcome#index"
 
   devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" } do
 
   end
-  
-  root :to => "welcome#index"
 
-  match '/:user' => "styleguides#index",:via => [:get]
-  match '/:user/:styleguide' => "styleguides#show",:via => [:get]
-  match '/:user/:styleguide/:component' => "components#show",:via => [:get]
-  match '/:user/:styleguide/:component/edit' => "components#edit",:via => [:get]
+  get '/:user', to: 'styleguides#index', as: :user
+  get '/:user', to: 'styleguides#index', as: :styleguides
+  get '/:user/:styleguide', to: 'styleguides#show', as: :styleguide
+  get '/:user/:styleguide/edit', to: 'styleguides#edit', as: :edit_styleguide
+  get '/:user/styleguides/new', to: 'styleguides#new', as: :new_styleguide
+  post '/:user', to: 'styleguides#create'
+  put '/:user/:styleguide', to: 'styleguides#update'
+  delete '/:user/:styleguide', to: 'styleguides#destroy'
+  get '/:user/:styleguide', to: 'styleguides#show', as: :components
+  get '/:user/:styleguide/:component', to: 'components#show', as: :component
+  get '/:user/:styleguide/:component/edit', to: 'components#edit', as: :edit_component
+  get '/:user/:styleguide/components/new', to: 'components#new', as: :new_component
+  post '/:user/:styleguide', to: 'components#create'
+  put '/:user/:styleguide/:component', to: 'components#update'
+  delete '/:user/:styleguide/:component', to: 'components#destroy'
 
 end
 

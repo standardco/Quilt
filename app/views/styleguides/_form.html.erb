@@ -1,5 +1,4 @@
-
-<%= form_for(@styleguide) do |f| %>
+<%= form_for @styleguide do |f| %>
     <% if @styleguide.errors.any? %>
         <div id="error_explanation">
             <h2><%= pluralize(@styleguide.errors.count, "error") %> prohibited this styleguide from being saved:</h2>
@@ -23,8 +22,8 @@
         <%= f.text_area :css_paths, :placeholder => 'Cut and paste your linked stylesheets and fonts' %>
     </div>
     <div class="form-group">
-       <!--  <%= select_tag(:is_public) %> -->
-    <%= f.select :is_public, options_for_select([["Public", "yes"], ["Private", "no"]], @styleguide.is_public) %>
+        <!--  <%= select_tag(:is_public) %> -->
+        <%= f.select :is_public, options_for_select([["Public", "yes"], ["Private", "no"]], @styleguide.is_public) %>
     </div>
     <hr>
     <div class="categories">
@@ -39,6 +38,3 @@
         <%= f.submit "Save", :class => "btn" %>
     </div>
 <% end %>
-
-
-

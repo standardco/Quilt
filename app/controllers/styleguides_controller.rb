@@ -7,29 +7,27 @@ class StyleguidesController < ApplicationController
   # GET /styleguides.json
   def index
     @user = current_user
-    # changed to return just a given user's styleguides
-    #@styleguides = Styleguide.all
-    @current_user_styleguides = Styleguide.where(:user_id => @user.id).order_by(:created_at => "desc")
+    @user_styleguides = Styleguide.where(:user_id => @user.id).order_by(:created_at => "desc")
     @public_styleguides = Styleguide.where(:is_public => "yes")
-
   end
 
-  # GET /styleguides/1
-  # GET /styleguides/1.json
+  # GET /:user/:styleguide
+  # GET /:user/:styleguide.json
   def show
   end
 
-  # GET /styleguides/new
+  # GET /:user/styleguides/new
   def new
+    @user = current_user
     @styleguide = Styleguide.new
   end
 
-  # GET /styleguides/1/edit
+  # GET /:user/:styleguide/edit
   def edit
   end
 
-  # POST /styleguides
-  # POST /styleguides.json
+  # POST /:user/styleguides
+  # POST /:user/styleguides.json
   def create
     @styleguide = Styleguide.new(styleguide_params)
     @user = current_user
@@ -48,13 +46,11 @@ class StyleguidesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /styleguides/1
-  # PATCH/PUT /styleguides/1.json
+  # PATCH/PUT /:user/:styleguide
+  # PATCH/PUT /:user/:styleguide.json
   def update
     respond_to do |format|
       if @styleguide.update(styleguide_params)
-        styleguide_path = '/' + @styleguide.user._slugs[0] + '/' + @styleguide._slugs[0]
-
         format.html { redirect_to styleguide_path, notice: 'Styleguide was successfully updated.' }
         format.json { head :no_content }
       else
@@ -64,8 +60,8 @@ class StyleguidesController < ApplicationController
     end
   end
 
-  # DELETE /styleguides/1
-  # DELETE /styleguides/1.json
+  # DELETE /:user/:styleguide
+  # DELETE /:user/:styleguide.json
   def destroy
     @styleguide.destroy
     respond_to do |format|
@@ -74,14 +70,10 @@ class StyleguidesController < ApplicationController
     end
   end
 
-  def path_to_styleguide
-
-    "here"
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_styleguide
+      @user = current_user
       @styleguide = Styleguide.find(params[:styleguide])
       @owner = @styleguide.user
       @components = Component.where(styleguide_id: @styleguide.id)
@@ -89,7 +81,6 @@ class StyleguidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def styleguide_params
-      params.require(:styleguide).permit(:title, :user_id, :url, :description, :categories, :css_paths, :image_url,
-                                          :is_public)
+      params.require(:styleguide).permit(:title, :user_id, :url, :description, :categories, :css_paths, :image_url, :is_public)
     end
 end

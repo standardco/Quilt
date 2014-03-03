@@ -3,7 +3,7 @@
 <head>
 
   	<title>Quilt</title>
-  	<%= stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true %>
+  	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   	<%= csrf_meta_tags %>
 	<%= yield :styleguide_css %>
 
@@ -20,7 +20,7 @@
 		<% if user_signed_in? %>
 
 			<ul class="mainnav">
-				<li><a class="active" href="#">Styleguides</a></li>
+				<li><%= link_to "Styleguides", styleguides_path %></li>
 				<li><a href="#">Team</a></li>
 				<li><a href="#">Support</a></li>
 			</ul>	
@@ -30,7 +30,7 @@
 				<%= current_user.email %> 
 			</div>
 
-			<!-- 		
+			<!-- 		 
 			This log out needs to go in a dropdown // adding this later	
 			<div class="navbtns">
 				<%= link_to destroy_user_session_path, method: :delete, :class => 'logout' do  %>
@@ -41,7 +41,7 @@
 		<% end %>
 	</nav>
 
-	<!-- <div>
+	<div>
 		<div class="offpage-left">
 			<ul class="nav navbar-nav">
 				<% if user_signed_in? %>
@@ -52,21 +52,21 @@
 						<% end %>
 					</li>
 					<li>
-						<%= link_to components_path do %>
+						<a href="#">
 							<span class="icon"><i class="icon-globe"></i></span> Component
-						<% end %>
+						</a>
 					</li>
 					
 					<li>
 						<ul class="components">
 							<% @components.each do |component| %>
 								<li>
-									<%= link_to component, 'class' => 'comp-link' do %>
+									<a href="#" class="comp-link">
 										<%= component.title %>
-									<% end %>
-									<%= link_to edit_component_path(component), 'class' => 'edit-link' do %>
+									</a>
+									<a href="#" class="edit-link">
 										<span class="icon"><i class="icon-pen"></i></span>
-									<% end %>
+									</a>
 								</li>
 							<% end %>
 							 <li><a href="post">Grid <span class="icon"><i class="icon-pen"></i></span></a></li>
@@ -81,13 +81,13 @@
 						</ul>
 					</li>
 					<li>
-						<%= link_to new_component_path do %>
+						<a href="#">
 	  						<span class="icon"><i class="icon-plus"></i></span> Add New Component
-						<% end %>
+						</a>
 					</li>
 					<li>
-						<%= link_to new_styleguide_path do %>
-	  						<span class="icon"><i class="icon-plus"></i></span> Add New Styleguide
+						<%= link_to new_styleguide_path(@user) do %>
+	  					<span class="icon"><i class="icon-plus"></i></span> Add New Styleguide
 						<% end %>
 					</li>
 				<% else %>
@@ -96,18 +96,13 @@
 				<% end %>
 			</ul> 
 		</div>
-	</div> -->
+	</div>
 
 	<div class="main container">
-		<% if flash[:notice] %>
-			<p class="notice"><%= notice %></p>
-		<% end %>
 		<% if flash[:alert] %>
-       		<p class="alert"><%= alert %></p>
-       	<% end %>
-
+   		<p class="alert alert-warning"><%= alert %></p>
+   	<% end %>
 		<%= yield %>
-
 	</div>
 	
   	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>

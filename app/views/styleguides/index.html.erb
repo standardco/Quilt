@@ -40,30 +40,13 @@
 <% end %>
 
 <br><br>
-<% if @public_styleguides != nil %>
-
+<% if @public_styleguides %>
 PUBLIC STYLEGUIDES!
 <div class="guides">
-  <% @public_styleguides.each do |styleguide| %>
-  <div class="guide">
-    <div class="area">
-      <h4>102</h4>
-      <p>Components</p>
-    </div>
-    <%= styleguide.title %>
-  <%= styleguide.user._slugs[0] %>
-  <%= link_to 'Show', styleguide._slugs[0] %>
-  <%= link_to 'Edit', edit_styleguide_path(styleguide) %>
-  <%= link_to 'Destroy', styleguide, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
- 
-<% end %>
+  <%= render(@public_styleguides) %>
 </div>
 <% end %>
 
-
-
-
 <br clear="all">
 
-<%= link_to 'New Styleguide', new_styleguide_path %>
+<%= link_to 'New Styleguide', new_styleguide_path(@user) %>
