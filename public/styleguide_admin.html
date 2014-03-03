@@ -24,21 +24,33 @@
         Eric Toledo
       </div>
   </nav>
-
   <section class="guideheader">
+    <a class="btn pull-right" href="/component/new"> <i class="icon icon-plus"></i> Add Component</a>
     <h2>Styleguide Title</h2>
-    <ul>
-      <li><a class="sg_components" title="Components" href="#">Components</a></li>
-      <li><a class="sg_settings" title="Settings" href="#">Settings</a></li>
-      <li><a class="sg_launch" title="Launch" href="#">Launch</a></li>
+    <ul class="sg_nav">
+      <li><a class="active" title="Components" href="#"><i class="icon-components"></i></a></li>
+      <li><a title="Settings" href="#"><i class="icon-settings"></i></a></li>
+      <li><a title="Launch" href="#"><i class="icon-launch"></i></a></li>
     </ul>
-
-    <div>
-      <ul class="sg_toggle">
-      </ul>
-    </div>
   </section>
 
+  <div class="main container">
+
+    <div class="component_item">
+      <ul class="component_actions">
+        <li><a class="component_delete" title="Delete" href=""><i class="icon-delete"></i></a></li>
+        <li><a class="component_edit" title="Edit" href=""><i class="icon-edit"></i></a></li>
+      </ul>
+      <h2>Component Title</h2>
+      <h3>Component Description</h3>
+
+      <div class="component_rendered">
+        Rendered Component here
+      </div>
+    </div>
+
+
+  </div>
   
 </body>
 </html>

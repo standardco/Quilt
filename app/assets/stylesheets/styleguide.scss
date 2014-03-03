@@ -1,0 +1,49 @@
+/* Styleguide Classes
+-----------------------------------------*/
+nav.global+.guideheader {
+	margin-top:-30px;
+}
+
+.guideheader {
+	height:56px;
+	margin-bottom:30px;
+	padding:10px 20px 0;
+	border-bottom: #f3f3f4 solid 1px;
+	h2 {
+		margin-top:3px;
+		font-size:25px;
+		float:left;margin-bottom: 0;
+		margin-right: 30px;
+	}
+}
+
+.sg_nav {
+	list-style:none;
+	margin:0;
+	padding:0;
+	li {
+		display:inline-block;
+		margin-right:10px;
+		padding-top:6px;
+		a{
+			color:#bcbec0;
+			font-size:20px;
+			&.active {color:#818285} 
+		}		
+	}
+}
+
+.sg_toggle {
+	.sg_collapsed {}
+	.sg_expanded {}
+}
+
+.component_item {
+	.component_actions {
+
+	}
+}
+
+.component_rendered {
+
+}
