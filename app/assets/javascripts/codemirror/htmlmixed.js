@@ -1,4 +1,4 @@
-CodeMirror.defineMode("htmlmixed", function(config, parserConfig) {
+ CodeMirror.defineMode("htmlmixed", function(config, parserConfig) {
   var htmlMode = CodeMirror.getMode(config, {name: "xml",
                                              htmlMode: true,
                                              multilineTagIndentFactor: parserConfig.multilineTagIndentFactor,
