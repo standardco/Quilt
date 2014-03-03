@@ -1,32 +1,59 @@
 /* styleguide styles*/
 
 .new-guide {
-  display: table;
-  width: 100%;
+    display: table;
+    width: 100%;
 }
 .no-guide {
-  background: #f2f2f2;
-  margin: 20px 0;
-  padding: 10px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+    background: #f2f2f2;
+    margin: 20px 0;
+    padding: 30px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
+.no-guide h2 { text-align: center; }
+.no-guide p { text-align: center; }
+.no-guide i {
+    font-size: 124px;
+    color: #fff;
+    padding: 50px 0 30px;
+    text-align: center;
+    display: block;
+}
+
+.guides {
+    display: table;
+    width: 100%;
+}
+
 .guides .guide {
-  width: 170px;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  display: block;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
+    width: 300px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    display: block;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    min-height: 270px;
 }
-.guides .guide:nth-child(5n + 0) {
-  margin-right: -30px;
+.guides .guide:nth-child(3n + 0) {
+    margin-right: -30px;
 }
+@media (max-width: 992px) {
+    .guides .guide { width: 230px; }
+}
+@media (max-width: 767px) {
+    .guides .guide { width: 49%;margin-right: 2%; }
+    .guides .guide:nth-child(2n + 0) { margin-right: -2%; }
+}
+@media (max-width: 767px) {
+    .guides .guide { width: 100%; }
+}
+
 .guides .guide .area { background: #f2f2f2;
-  height: 210px;
-  padding: 70px 0; }
+    height: 210px;
+    padding: 70px 0; }
 
 
 /*.styleguide-form .categories .new-category { margin-bottom: 40px; }

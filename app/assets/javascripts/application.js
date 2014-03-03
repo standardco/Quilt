@@ -40,14 +40,11 @@ $(document).on('ready', function() {
 	// 	return false;
 	// });
 
-    var editor = CodeMirror.fromTextArea(document.getElementById("showcode"), {
-        lineNumbers: true,
-        styleActiveLine: true,
-        matchBrackets: true,
-        mode: "htmlmixed",
-        readOnly: "nocursor",
-        theme: "monokai"
-    });
+
+    
+});
+
+
     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         styleActiveLine: true,
@@ -55,15 +52,21 @@ $(document).on('ready', function() {
         mode: "htmlmixed",
         theme: "monokai"
     });
-    var editor = CodeMirror.fromTextArea(document.getElementById("dependency"), {
+    // var editor = CodeMirror.fromTextArea(document.getElementById("dependency"), {
+    //     lineNumbers: true,
+    //     styleActiveLine: true,
+    //     matchBrackets: true,
+    //     mode: "htmlmixed",
+    //     theme: "monokai"
+    // });
+
+    var editor = CodeMirror.fromTextArea(document.getElementById("showcode"), {
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
         mode: "htmlmixed",
         theme: "monokai"
     });
-    
-});
 
 function getCategories() {
     $('.sug-categories').on('click', '.add', function() {

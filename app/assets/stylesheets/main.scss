@@ -4,13 +4,23 @@ body {
   font-size: 14px; 
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;    
+}
+
 a { color: #FF6640; }
 a:hover { text-decoration: none }
 a.muted { color: #ccc; }
 a.muted:hover { text-decoration: underline; }
 
+
+
 hr { background: #ccc;height: 1px;border: 0; }
-.container { width: 960px; }
+
+@media (min-width: 992px) {
+    .container { width: 960px; }
+}
+
 .element { padding: 40px 0;}
 
 .main {
@@ -50,6 +60,8 @@ hr { background: #ccc;height: 1px;border: 0; }
   float: right;
   cursor: pointer;
 }
+
+
 
 
 
