@@ -16,17 +16,36 @@
 .logout { color: #f2f2f2;margin-left: 10px;font-size: 14px; }
 
 /*Nav left*/
-.logo img { width: 40px; }
-.nav-offpage-left { display: inline-block;margin: 15px 10px 15px 25px; }
-.nav-offpage-left img {width: 24px;margin: 8px 0; }
-.nav-offpage-left:hover { text-decoration: none; }
 
-.offpage-left { width: 240px;height: 100%;background: #333;color: #fff;position: fixed;top: 0;bottom: 0;left: -240px;-webkit-transition: -webkit-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);-moz-transition: -moz-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);-o-transition: -o-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);transition: transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9); }
+ul.siderail {
+	margin:0;
+	padding:40px 20px;
+	list-style-type:none;
+	width: 200px;
+	height: 100%;
+	background: #f1f2f2;
+	position: absolute;
+	top: 55px;
+	bottom: 0;
+	left: 0;
+	float:left;
+	-webkit-transition: -webkit-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);-moz-transition: -moz-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);-o-transition: -o-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);transition: transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9); 
+	li a {
+		color:#888;
+		margin-bottom:10px;
+		display:block;
+		&.active {color:#333}
+	}
+}
 
-.offpage-left .branding { background: #444;text-align: center;padding: 5px;border-bottom: 1px solid #333; }
-.offpage-left .branding .brand { border-bottom: 1px solid #f2f2f2;margin: 0 40px;font-size: 14px; }
-.offpage-left .branding .brand .header { font-family: 'bebas_neueregular', Arial, sans-serif;font-size: 36px;vertical-align: middle; }
-.offpage-left .branding .email { margin-top: 5px;font-size: 12px; }
+.main.withrail {
+	margin-left:200px;
+	padding:0 20px;
+}
 
-.push-left .offpage-left { -webkit-transform: translate3d(240px, 0, 0);transform: translate3d(240px, 0, 0); }
-.push-left .main { width: 100%;-webkit-transform: translate3d(240px, 0, 0);transform: translate3d(240px, 0, 0); }
+.push-left { 
+	.main.withrail {
+		margin-left:0
+	}
+	.siderail {left:-200px;}
+}
