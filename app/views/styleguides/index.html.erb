@@ -4,7 +4,7 @@
     </div>
     <div class="col-sm-6">
         <div class="new-guide">
-            <a class="btn pull-right" href="/styleguides/new"> <i class="icon icon-plus"></i> New Styleguide</a>
+            <a class="btn pull-right" href="/styleguides/new"> <i class="icon icon-plus"></i> New Styleguide</a> 
         </div>
     </div>
 </div>
@@ -13,7 +13,10 @@
 <div class="no-guide">
     <i class="icon icon-qlogo"></i>
     <h2>Welcome to Quilt</h2>
-    <p>Check out the public styleguides and <a href="/styleguides/new">get started by creating your own!</a></p>
+    <p>
+        Check out the public styleguides and 
+        <%= link_to 'get started by creating your own!', new_styleguide_path(@user) %> 
+    </p>
 </div>
 <% end %>
 
@@ -48,4 +51,5 @@ PUBLIC STYLEGUIDES!
 <% end %>
 
 <br clear="all">
+
 
