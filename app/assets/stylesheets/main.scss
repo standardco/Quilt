@@ -18,7 +18,7 @@ a.muted:hover { text-decoration: underline; }
 hr { background: #ccc;height: 1px;border: 0; }
 
 @media (min-width: 992px) {
-    .container { width: 960px; }
+    .container { min-width: 960px; }
 }
 
 .element { padding: 40px 0;}
