@@ -41,63 +41,6 @@
 		<% end %>
 	</nav>
 
-	<div>
-		<div class="offpage-left">
-			<ul class="nav navbar-nav">
-				<% if user_signed_in? %>
-
-					<li>
-						<%= link_to edit_user_registration_path do %>
-							<span class="icon"><i class="icon-settings"></i></span> Settings
-						<% end %>
-					</li>
-					<li>
-						<a href="#">
-							<span class="icon"><i class="icon-globe"></i></span> Component
-						</a>
-					</li>
-					
-					<li>
-						<ul class="components">
-							<% @components.each do |component| %>
-								<li>
-									<a href="#" class="comp-link">
-										<%= component.title %>
-									</a>
-									<a href="#" class="edit-link">
-										<span class="icon"><i class="icon-pen"></i></span>
-									</a>
-								</li>
-							<% end %>
-							 <li><a href="post">Grid <span class="icon"><i class="icon-pen"></i></span></a></li>
-							<li><a href="post">Navigation <span class="icon"><i class="icon-pen"></i></span></a></li>
-							<li><a href="post">Tables <span class="icon"><i class="icon-pen"></i></span></a></li>
-							<li><a href="post">Forms <span class="icon"><i class="icon-pen"></i></span></a></li>
-							<li><a href="post">Icons <span class="icon"><i class="icon-pen"></i></span></a></li>
-							<li><a href="post">Typography <span class="icon"><i class="icon-plus"></i></span></a></li>
-							<li><a href="post">Buttons <span class="icon"><i class="icon-plus"></i></span></a></li>
-							<li><a href="post">Lists <span class="icon"><i class="icon-plus"></i></span></a></li>
-						 	
-						</ul>
-					</li>
-					<li>
-						<a href="#">
-	  						<span class="icon"><i class="icon-plus"></i></span> Add New Component
-						</a>
-					</li>
-					<li>
-						<%= link_to new_styleguide_path(@user) do %>
-	  					<span class="icon"><i class="icon-plus"></i></span> Add New Styleguide
-						<% end %>
-					</li>
-				<% else %>
-					<li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-	  				<li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-				<% end %>
-			</ul> 
-		</div>
-	</div>
-
 	<div class="main container">
 		<% if flash[:alert] %>
    		<p class="alert alert-warning"><%= alert %></p>
