@@ -9,23 +9,23 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= text_field_tag 'styleguide', 'Styleguide: ' + @styleguide.title, disabled: true %>
+  <div class="form-group">
+    <h2><%= @styleguide.title %></h2>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.text_field :title, :placeholder => "Title" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.text_area :description, :placeholder => "Description" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.text_area :notes, :placeholder => "Notes" %>
   </div>
-  <div class="field">
-    <%= f.text_area :dependencies, :placeholder => "Dependencies" %>
+  <div class="dependency form-group">
+    <%= f.text_field :dependencies, :placeholder => "Dependencies", :id => 'dependency' %>
   </div>
-  <div class="field">
-    <%= f.text_area :code, :placeholder => "Markup", :onkeyup => "textAreaAdjust(this)", :style => "overflow: hidden" %>
+  <div class="form-group">
+    <%= f.text_area :code, :placeholder => "Markup", :id => "code" %>
   </div>
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-default comp-save' %>

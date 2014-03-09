@@ -17,6 +17,10 @@
 
 $(document).on('ready', function() {
 
+
+
+      
+
 	$(document).on('click', '.nav-offpage-left', function() {
         $('.body').toggleClass('push-left');
         return false;
@@ -35,8 +39,34 @@ $(document).on('ready', function() {
 	// 	$('.code-details.'+id).fadeToggle();
 	// 	return false;
 	// });
+
+
     
 });
+
+
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        styleActiveLine: true,
+        matchBrackets: true,
+        mode: "htmlmixed",
+        theme: "monokai"
+    });
+    // var editor = CodeMirror.fromTextArea(document.getElementById("dependency"), {
+    //     lineNumbers: true,
+    //     styleActiveLine: true,
+    //     matchBrackets: true,
+    //     mode: "htmlmixed",
+    //     theme: "monokai"
+    // });
+
+    var editor = CodeMirror.fromTextArea(document.getElementById("showcode"), {
+        lineNumbers: true,
+        styleActiveLine: true,
+        matchBrackets: true,
+        mode: "htmlmixed",
+        theme: "monokai"
+    });
 
 function getCategories() {
     $('.sug-categories').on('click', '.add', function() {

@@ -1,0 +1,74 @@
+/* Styleguide Classes
+-----------------------------------------*/
+nav.global+.guideheader {
+	margin-top:-30px;
+}
+
+.guideheader {
+	height:56px;
+	margin-bottom:30px;
+	padding:10px 20px 0;
+	border-bottom: #f3f3f4 solid 1px;
+	h2 {
+		margin-top:3px;
+		font-size:25px;
+		float:left;margin-bottom: 0;
+		margin-right: 30px;
+		.icon-delete {
+			font-size: 16px;
+			border: solid 1px #cecece;
+			padding: 6px 10px 2px;
+			margin-right: 15px;
+		}
+	}
+}
+
+.sg_nav {
+	list-style:none;
+	margin:0;
+	padding:0;
+	li {
+		display:inline-block;
+		margin-right:10px;
+		padding-top:6px;
+		a{
+			color:#bcbec0;
+			font-size:20px;
+			&.active {color:#818285} 
+		}		
+	}
+}
+
+.sg_toggle {
+	.sg_collapsed {}
+	.sg_expanded {}
+}
+
+.component_item {
+	margin-bottom:40px;
+	h3 {font-size:18px;margin-bottom:30px;font-weight: 100;}
+	.component_actions {
+		float:right;
+		list-style:none;
+		margin:0;
+		padding:0;
+		li {
+			float:right;
+			margin-left:20px;
+			padding-top:6px;
+			a {
+				color:#bcbec0;
+				font-size:20px;
+				&:hover {color:#818285} 
+			}		
+			&.component_delete {
+				padding-top:8px;
+				a {font-size:16px;}
+			}
+		}
+	}
+}
+
+.component_rendered {
+
+}
