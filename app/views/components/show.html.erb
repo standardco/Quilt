@@ -1,6 +1,6 @@
 
 <%= css_links @styleguide %>
-<% 
+<%
     content_for :styleguide_css do
         if @styleguide
             arr = @styleguide.css_paths.split(",")
@@ -17,8 +17,8 @@
 <div class="codeline">
     <div class="pull-left">
         <div class="tags">
-            <a href="">Tag</a>, 
-            <a href="">Tag</a>, 
+            <a href="">Tag</a>,
+            <a href="">Tag</a>,
             <a href="">Tag</a>
         </div>
     </div>
@@ -44,4 +44,4 @@
     </div>
 </div>
 <br><br>
-<%= link_to 'Back', styleguide_path(@user, @styleguide) %>
+<%= link_to 'Back', styleguide_path(@styleguide.user, @styleguide) %>
