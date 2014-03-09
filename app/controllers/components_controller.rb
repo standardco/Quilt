@@ -17,7 +17,7 @@ class ComponentsController < ApplicationController
     @component = Component.new
   end
 
-  def 
+  def
 
   # GET /components/upload
   def upload
@@ -74,7 +74,6 @@ class ComponentsController < ApplicationController
   # POST /components
   # POST /components.json
   def create
-    puts "COMPONENT CREATE!!!"
     @styleguide = Styleguide.find(params[:styleguide])
     @component = Component.new(component_params)
     @component.user_id = current_user.id
@@ -120,7 +119,7 @@ class ComponentsController < ApplicationController
     def get_component_path
       return '/' + @styleguide.user._slugs[0] + '/' + @styleguide._slugs[0] + '/' + @component._slugs[0]
     end
-    
+
     def set_component
       @user = current_user
       @styleguide = Styleguide.find(params[:styleguide])
