@@ -1,4 +1,4 @@
-<%= form_for edit_styleguide_path(@user, @styleguide) do |f| %>
+<%= form_for @styleguide do |f| %>
     <% if @styleguide.errors.any? %>
         <div id="error_explanation">
             <h2><%= pluralize(@styleguide.errors.count, "error") %> prohibited this styleguide from being saved:</h2>
