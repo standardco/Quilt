@@ -1,53 +1,39 @@
 <div class="row">
-    <div class="col-sm-6">
-        <h2>Styleguides</h2>
+  <div class="col-sm-6">
+    <h2>Styleguides</h2>
+  </div>
+  <div class="col-sm-6">
+    <div class="new-guide">
+      <%= link_to raw("<i class='icon icon-plus'></i>  New Styleguide"), new_styleguide_path(@user), :class => "btn pull-right" %>
     </div>
-    <div class="col-sm-6">
-        <div class="new-guide">
-            <%= link_to raw("<i class='icon icon-plus'></i>  New Styleguide"), new_styleguide_path(@user), :class => "btn pull-right" %>
-        </div>
-    </div>
+  </div>
 </div>
 
-<% if @user.styleguides == nil %>
-<div class="no-guide">
+<% if @user.styleguides.count > 0 %>
+  <h3>YOUR STYLEGUIDES</h3>
+  <div class="guides">
+    <%= render(@user.styleguides) %>
+  </div>
+<% else %>
+  <div class="no-guide">
     <i class="icon icon-qlogo"></i>
     <h2>Welcome to Quilt</h2>
     <p>
-        Check out the public styleguides and
-        <%= link_to 'get started by creating your own!', new_styleguide_path(@user) %>
+      Check out the public styleguides and
+      <%= link_to 'get started by creating your own!', new_styleguide_path(@user) %>
     </p>
-</div>
+  </div>
 <% end %>
-
-<% if @user.styleguides != nil %>
-    <h3>YOUR STYLEGUIDES</h3>
-    <div class="guides">
-        <% @user.styleguides.each do |styleguide| %>
-        <div class="guide">
-            <div class="area">
-                <% if styleguide.image_url != nil %>
-                    <%= image_tag(styleguide.image_url) %>
-                <% end %>
-                <h4>102</h4>
-                <p>Components</p>
-            </div>
-            <%= styleguide.title %>
-            <%= styleguide.user._slugs[0] %>
-            <%= link_to 'Show', styleguide_path(styleguide.user, styleguide) %>
-            <%= link_to 'Edit', edit_styleguide_path(styleguide.user, styleguide) %>
-            <%= link_to 'Destroy', styleguide_path(styleguide.user, styleguide), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
-        <% end %>
-    </div>
-<% end %>
-
 <br><br>
-<% if @public_styleguides %>
-PUBLIC STYLEGUIDES!
-<div class="guides">
-  <%= render(@public_styleguides) %>
-</div>
+
+<% if @public_styleguides.count > 0 %>
+  <h3>PUBLIC STYLEGUIDES!</h3>
+  <div class="guides">
+    <%= render(@public_styleguides) %>
+  </div>
+<% else %>
+  <h3>PUBLIC STYLEGUIDES!</h3>
+  No public styleguides found.
 <% end %>
 
 <br clear="all">
