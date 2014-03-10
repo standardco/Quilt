@@ -7,7 +7,7 @@
     <p>Components</p>
   </div>
   <%= styleguide.title %>
-  <%= styleguide.user._slugs[0] %>
+  <%= styleguide.user.username %>
   <%= link_to 'Show', styleguide_path(styleguide.user, styleguide) %>
   <%= link_to 'Edit', edit_styleguide_path(styleguide.user, styleguide) %>
   <%= link_to 'Destroy', styleguide_path(styleguide.user, styleguide), method: :delete, data: { confirm: 'Are you sure?' } %>
