@@ -13,7 +13,6 @@ class ComponentsController < ApplicationController
   # GET /components/1
   # GET /components/1.json
   def show
-    @component = Component.new
   end
 
   def
