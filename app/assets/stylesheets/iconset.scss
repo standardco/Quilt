@@ -262,32 +262,27 @@ i, .icon {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-x:before {
-  content: "x";
+
+.icon-component:before {
+  content: "c";
 }
-.icon-avatar:before {
-  content: "a";
+.icon-settings:before {
+  content: "s";
 }
-.icon-check:before {
-  content: "y";
+.icon-launch:before {
+  content: "l";
 }
 .icon-close:before {
   content: "x";
 }
-.icon-components:before {
-  content: "c";
+.icon-check:before {
+  content: "y";
 }
-.icon-delete:before {
-  content: "X";
-}
-.icon-edit:before {
-  content: "e";
+.icon-avatar:before {
+  content: "a";
 }
 .icon-github:before {
   content: "g";
-}
-.icon-settings:before {
-  content: "s";
 }
 .icon-manual:before {
   content: "m";
@@ -298,6 +293,12 @@ i, .icon {
 .icon-qlogo:before {
   content: "q";
 }
-.icon-launch:before {
-  content: "l";
+.icon-delete:before {
+  content: "X";
+}
+.icon-edit:before {
+  content: "e";
+}
+.icon-search:before {
+  content: "0";
 }
