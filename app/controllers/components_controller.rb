@@ -4,20 +4,14 @@ class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
-  # GET /components
-  # GET /components.json
-  def index
-    @components = Component.all
-  end
-
-  # GET /components/1
-  # GET /components/1.json
+  # GET /:user/:styleguide/:component
+  # GET /:user/:styleguide/:component.json
   def show
   end
 
   def
 
-  # GET /components/upload
+  # GET /:user/:styleguide/components/upload
   def upload
     # Add demo content for testing purposes.
     @demo = '<!-- quilt component -->
@@ -38,7 +32,7 @@ class ComponentsController < ApplicationController
 <!-- quilt end -->'
   end
 
-  # POST /components/upload
+  # POST /:user/:styleguide/components/upload_html
   def upload_html
 
     # Extract the quilt components.
@@ -54,11 +48,11 @@ class ComponentsController < ApplicationController
     end
   end
 
-  # GET /components/github
+  # GET /:user/:styleguide/components/github
   def github
   end
 
-  # GET /components/new
+  # GET /:user/:styleguide/components/new
   def new
     @user = current_user
     @styleguide = @user.styleguides.find params[:styleguide]
@@ -87,8 +81,8 @@ class ComponentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /components/1
-  # PATCH/PUT /components/1.json
+  # PATCH/PUT /:user/:styleguide/:component
+  # PATCH/PUT /:user/:styleguide/:component.json
   def update
     respond_to do |format|
       if @component.update(component_params)
@@ -101,8 +95,8 @@ class ComponentsController < ApplicationController
     end
   end
 
-  # DELETE /components/1
-  # DELETE /components/1.json
+  # DELETE /:user/:styleguide/:component
+  # DELETE /:user/:styleguide/:component.json
   def destroy
     @component.destroy
     respond_to do |format|
@@ -113,7 +107,7 @@ class ComponentsController < ApplicationController
 
   private
     def set_component
-      @user = current_user
+      @user = User.find params[:user]
       @styleguide = @user.styleguides.find params[:styleguide]
       @component = @styleguide.components.find params[:component]
     end
