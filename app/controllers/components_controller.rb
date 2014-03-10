@@ -79,7 +79,7 @@ class ComponentsController < ApplicationController
 
     respond_to do |format|
       if @component.save
-        format.html { redirect_to styleguide_path(@styleguide.user, @styleguide), notice: 'Component was successfully created.' }
+        format.html { redirect_to component_path(@component.styleguide.user, @component.styleguide, @component), notice: 'Component was successfully created.' }
         format.json { render action: 'show', status: :created, location: @component }
       else
         format.html { render action: 'new' }
@@ -91,12 +91,9 @@ class ComponentsController < ApplicationController
   # PATCH/PUT /components/1
   # PATCH/PUT /components/1.json
   def update
-    @user = current_user
-    @styleguide = @user.styleguides.find params[:styleguide]
-
     respond_to do |format|
       if @component.update(component_params)
-        format.html { redirect_to styleguide_path(@styleguide.user, @styleguide), notice: 'Component was successfully updated.' }
+        format.html { redirect_to component_path(@component.styleguide.user, @component.styleguide, @component), notice: 'Component was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
