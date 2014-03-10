@@ -47,7 +47,7 @@ class StyleguidesController < ApplicationController
   def update
     respond_to do |format|
       if @styleguide.update(styleguide_params)
-        format.html { redirect_to styleguide_path, notice: 'Styleguide was successfully updated.' }
+        format.html { redirect_to styleguide_path(@styleguide.user, @styleguide), notice: 'Styleguide was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -71,8 +71,6 @@ class StyleguidesController < ApplicationController
     def set_styleguide
       @user = current_user
       @styleguide = @user.styleguides.find params[:styleguide]
-      # @styleguide = Styleguide.find(params[:styleguide])
-      @owner = @styleguide.user
       @components = Component.where(styleguide_id: @styleguide.id)
     end
 

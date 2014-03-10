@@ -9,12 +9,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @styleguide.user_id %>
+  <%= @styleguide.user.username %>
 </p>
 
 <p>
   <strong>Url:</strong>
-  <%= "/" + @styleguide.user._slugs[0] +'/'+ @styleguide._slugs[0]  %>
+  <%= styleguide_path  %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 </p>
 
 <h3>Components:</h3>
-<%= render(@components) %>
+<%= render(@styleguide.components) %>
 
 <div class="make-component">
   <h2>Add New Component</h2>
