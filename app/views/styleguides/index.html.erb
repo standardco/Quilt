@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<% if @user_styleguides == nil %>
+<% if @user.styleguides == nil %>
 <div class="no-guide">
     <i class="icon icon-qlogo"></i>
     <h2>Welcome to Quilt</h2>
@@ -20,10 +20,10 @@
 </div>
 <% end %>
 
-<% if @user_styleguides != nil %>
+<% if @user.styleguides != nil %>
     <h3>YOUR STYLEGUIDES</h3>
     <div class="guides">
-        <% @user_styleguides.each do |styleguide| %>
+        <% @user.styleguides.each do |styleguide| %>
         <div class="guide">
             <div class="area">
                 <% if styleguide.image_url != nil %>

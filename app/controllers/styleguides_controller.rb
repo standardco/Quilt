@@ -7,7 +7,6 @@ class StyleguidesController < ApplicationController
   # GET /styleguides.json
   def index
     @user = current_user
-    @user_styleguides = Styleguide.where(:user_id => @user.id).order_by(:created_at => "desc")
     @public_styleguides = Styleguide.where(:is_public => "yes")
   end
 
@@ -19,7 +18,7 @@ class StyleguidesController < ApplicationController
   # GET /:user/styleguides/new
   def new
     @user = current_user
-    @styleguide = Styleguide.new
+    @styleguide = @user.styleguides.new
   end
 
   # GET /:user/:styleguide/edit
