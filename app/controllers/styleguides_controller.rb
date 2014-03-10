@@ -2,9 +2,8 @@ class StyleguidesController < ApplicationController
   before_action :set_styleguide, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
-  # GET /:user (/tjmule)
-  # GET /styleguides
-  # GET /styleguides.json
+  # GET /:user
+  # GET /:user.json
   def index
     @user = current_user
     @public_styleguides = Array.new
