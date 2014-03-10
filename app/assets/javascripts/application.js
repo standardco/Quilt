@@ -44,7 +44,7 @@ $(document).on('ready', function() {
     
 });
 
-
+if ($('textarea').hasClass('code')) {
     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         styleActiveLine: true,
@@ -60,13 +60,14 @@ $(document).on('ready', function() {
     //     theme: "monokai"
     // });
 
-    var editor = CodeMirror.fromTextArea(document.getElementById("showcode"), {
-        lineNumbers: true,
-        styleActiveLine: true,
-        matchBrackets: true,
-        mode: "htmlmixed",
-        theme: "monokai"
-    });
+    // var editor = CodeMirror.fromTextArea(document.getElementById("showcode"), {
+    //     lineNumbers: true,
+    //     styleActiveLine: true,
+    //     matchBrackets: true,
+    //     mode: "htmlmixed",
+    //     theme: "monokai"
+    // });
+}
 
 function getCategories() {
     $('.sug-categories').on('click', '.add', function() {

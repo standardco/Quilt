@@ -49,6 +49,18 @@
 	</div>
 	
   	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<script type="text/javascript" src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+  	<script type="text/javascript">
+
+  	var test = ['green', 'blue', 'red', 'orange'];
+  	var html = "";
+  	$.each(test, function(i, value){
+  		html += "<option>"+value+"</option>";
+  	})
+  	$('.chosen-select').html(html);
+  	$('.chosen-select').chosen();
+
+  </script>
 
 </body>
 </html>
