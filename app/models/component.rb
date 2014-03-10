@@ -3,7 +3,7 @@ class Component
   include Mongoid::Slug
   include Mongoid::Timestamps::Created
   include Mongoid::Timestamps::Updated
-  
+
   field :title, type: String
   field :description, type: String
   field :notes, type: String
@@ -14,5 +14,6 @@ class Component
   field :tags, type: String
 
   slug :title
-  belongs_to :styleguide
+  validates_uniqueness_of :title
+  embedded_in :styleguide
 end

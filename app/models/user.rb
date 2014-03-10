@@ -7,8 +7,7 @@ class User
 	devise :omniauthable, :omniauth_providers => [:github]
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
-	devise :database_authenticatable, :registerable,
-	     :recoverable, :rememberable, :trackable, :validatable
+	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
 	## Database authenticatable
 	field :email,              :type => String, :default => ""
@@ -49,13 +48,11 @@ class User
 	field :is_temp_user, :type => Integer
 
 	slug :username
-
 	validates_uniqueness_of :username, :email
-
-	has_many :styleguides
+	embeds_many :styleguides
 
 	def self.find_for_github_oauth(auth, signed_in_resource=nil)
-		
+
 		provider = "github"
 
 		user = User.where(:provider => provider, :uid => auth.uid).first
@@ -63,7 +60,7 @@ class User
 
 			is_temp_user = 0
 			# sometimes github doesn't return email address or name. if that's the case
-			# randomly generate email and username as temporary holding vars. 
+			# randomly generate email and username as temporary holding vars.
 			# we'll then redirect the user to the settings page to "finish" registration
 			if (auth.email == nil || auth.email == "")
 				username = rand(10000..1000000).to_s
@@ -78,7 +75,7 @@ class User
 			                     email:email,
 			                     password:Devise.friendly_token[0,20],
 			                     username:username
-			                     
+
 			                     )
 
 		end

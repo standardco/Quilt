@@ -14,9 +14,8 @@ class Styleguide
   field :num_components, type: Integer
   field :image_url, type: String
 
-  belongs_to :user
-
-  validates_uniqueness_of :title
-
   slug :title
+  validates_uniqueness_of :title
+  embedded_in :user
+  embeds_many :components
 end
