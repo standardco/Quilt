@@ -7,7 +7,13 @@ class StyleguidesController < ApplicationController
   # GET /styleguides.json
   def index
     @user = current_user
-    @public_styleguides = Styleguide.where(:is_public => "yes")
+    # @public_styleguides = Styleguide.where(:is_public => "yes")
+    @public_styleguides = Array.new
+    User.all.each do |user|
+      user.styleguides.each do |styleguide|
+        @public_styleguides << styleguide if styleguide.is_public == "yes"
+      end
+    end
   end
 
   # GET /:user/:styleguide
