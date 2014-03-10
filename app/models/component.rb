@@ -9,11 +9,9 @@ class Component
   field :notes, type: String
   field :dependencies, type: String
   field :code, type: String
-  field :user_id, type: String
-  field :styleguide_id, type: String
   field :tags, type: String
 
-  slug :title
+  slug :title, :scope => :styleguide
   validates_uniqueness_of :title
   embedded_in :styleguide
 end
