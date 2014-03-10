@@ -1,14 +1,17 @@
 class StyleguidesController < ApplicationController
   before_action :set_styleguide, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
-
-  # GET /:user (/tjmule)
-  # GET /styleguides
-  # GET /styleguides.json
+  # GET /:user
+  # GET /:user.json
   def index
     @user = current_user
-    @user_styleguides = Styleguide.where(:user_id => @user.id).order_by(:created_at => "desc")
-    @public_styleguides = Styleguide.where(:is_public => "yes")
+    @public_styleguides = Array.new
+    User.each do |user|
+      user.styleguides.where(is_public: "yes").each do |styleguide|
+        @public_styleguides << styleguide
+      end
+    end
   end
 
   # GET /:user/:styleguide
@@ -19,7 +22,7 @@ class StyleguidesController < ApplicationController
   # GET /:user/styleguides/new
   def new
     @user = current_user
-    @styleguide = Styleguide.new
+    @styleguide = @user.styleguides.new
   end
 
   # GET /:user/:styleguide/edit
@@ -29,15 +32,12 @@ class StyleguidesController < ApplicationController
   # POST /:user/styleguides
   # POST /:user/styleguides.json
   def create
-    @styleguide = Styleguide.new(styleguide_params)
     @user = current_user
-    @styleguide.user_id = @user.id
+    @styleguide = @user.styleguides.create! user_styleguide_params
 
     respond_to do |format|
       if @styleguide.save
-        styleguide_path = '/' + @styleguide.user._slugs[0] + '/' + @styleguide._slugs[0]
-
-        format.html { redirect_to styleguide_path, notice: 'Styleguide was successfully created.' }
+        format.html { redirect_to user_styleguide_path(@styleguide.user, @styleguide), notice: 'Styleguide was successfully created.' }
         format.json { render action: 'show', status: :created, location: @styleguide }
       else
         format.html { render action: 'new' }
@@ -50,8 +50,8 @@ class StyleguidesController < ApplicationController
   # PATCH/PUT /:user/:styleguide.json
   def update
     respond_to do |format|
-      if @styleguide.update(styleguide_params)
-        format.html { redirect_to styleguide_path, notice: 'Styleguide was successfully updated.' }
+      if @styleguide.update(user_styleguide_params)
+        format.html { redirect_to user_styleguide_path(@styleguide.user, @styleguide), notice: 'Styleguide was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -65,7 +65,7 @@ class StyleguidesController < ApplicationController
   def destroy
     @styleguide.destroy
     respond_to do |format|
-      format.html { redirect_to styleguides_url }
+      format.html { redirect_to user_styleguides_url }
       format.json { head :no_content }
     end
   end
@@ -73,14 +73,12 @@ class StyleguidesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_styleguide
-      @user = current_user
-      @styleguide = Styleguide.find(params[:styleguide])
-      @owner = @styleguide.user
-      @components = Component.where(styleguide_id: @styleguide.id)
+      @user = User.find params[:user]
+      @styleguide = @user.styleguides.find params[:styleguide]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def styleguide_params
+    def user_styleguide_params
       params.require(:styleguide).permit(:title, :user_id, :url, :description, :categories, :css_paths, :image_url, :is_public)
     end
 end

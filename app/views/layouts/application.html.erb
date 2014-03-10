@@ -20,18 +20,18 @@
 		<% if user_signed_in? %>
 
 			<ul class="mainnav">
-				<li><%= link_to "Styleguides", styleguides_path %></li>
+				<li><%= link_to "Styleguides", user_styleguides_path %></li>
 				<li><a href="#">Team</a></li>
 				<li><a href="#">Support</a></li>
-			</ul>	
+			</ul>
 
 			<div class="account">
-				<img src="https://0.gravatar.com/avatar/617b2ff79c74484f9ccf0bfc708a4d4c?d=https%3A%2F%2Fidenticons.github.com%2F384b06d890db682156a5779ed82aa985.png&r=x&s=100"/> 
-				<%= current_user.email %> 
+				<img src="https://0.gravatar.com/avatar/617b2ff79c74484f9ccf0bfc708a4d4c?d=https%3A%2F%2Fidenticons.github.com%2F384b06d890db682156a5779ed82aa985.png&r=x&s=100"/>
+				<%= current_user.email %>
 			</div>
 
-			<!-- 		 
-			This log out needs to go in a dropdown // adding this later	
+			<!--
+			This log out needs to go in a dropdown // adding this later
 			<div class="navbtns">
 				<%= link_to destroy_user_session_path, method: :delete, :class => 'logout' do  %>
 					<i class="icon-signout"></i>
@@ -47,7 +47,7 @@
    	<% end %>
 		<%= yield %>
 	</div>
-	
+
   	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   	<script type="text/javascript" src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
   	<script type="text/javascript">

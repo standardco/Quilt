@@ -1,4 +1,6 @@
 <h1>Editing styleguide</h1>
+
 <%= render 'form' %>
-<%= link_to 'Show', @styleguide %> |
-<%= link_to 'Back', @user %>
+
+<%= link_to 'Show', user_styleguide_path(@styleguide.user, @styleguide) %> |
+<%= link_to 'Back', user_styleguides_path %>

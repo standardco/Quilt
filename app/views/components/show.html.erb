@@ -1,6 +1,6 @@
 
 <%= css_links @styleguide %>
-<% 
+<%
     content_for :styleguide_css do
         if @styleguide
             arr = @styleguide.css_paths.split(",")
@@ -11,18 +11,22 @@
 <% end %>
 <% end %>
 
+<% if notice %>
+  <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
+
 <h3><%= @component.title %></h3>
 <hr>
 <p><%= @component.description %></p>
 <div class="codeline">
     <div class="pull-left">
         <div class="tags">
-            <a href="">Tag</a>, 
-            <a href="">Tag</a>, 
+            <a href="">Tag</a>,
+            <a href="">Tag</a>,
             <a href="">Tag</a>
         </div>
     </div>
-    <div class="pull-right">
+    <div class="pull-left">
         <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
         <a href="#">
             <i class="icon-pen"></i>
@@ -30,18 +34,16 @@
         <a href=""><i class="icon-cancel_circle"></i></a>
     </div>
 </div>
-<div class="code-details one">
-    <div class="">
-        <strong>Dependencies:</strong>
-        <%= @component.dependencies %>
-        <pre class="prettyprint prettyprinted" >
-            <%= @component.code %>
-        </pre>
-        <p>
-          <strong>Notes:</strong>
-          <%= @component.notes %>
-        </p>
-    </div>
+<div class="pull-left">
+    <strong>Dependencies:</strong>
+    <%= @component.dependencies %>
+    <pre class="prettyprint prettyprinted" >
+        <%= @component.code %>
+    </pre>
+    <p>
+      <strong>Notes:</strong>
+      <%= @component.notes %>
+    </p>
 </div>
 <br><br>
-<%= link_to 'Back', styleguide_path(@user, @styleguide) %>
+<%= link_to 'Back', user_styleguide_path(@styleguide.user, @styleguide) %>

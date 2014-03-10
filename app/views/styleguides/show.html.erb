@@ -9,12 +9,17 @@
 
 <p>
   <strong>User:</strong>
-  <%= @styleguide.user_id %>
+  <%= @styleguide.user.username %>
 </p>
 
 <p>
   <strong>Url:</strong>
-  <%= "/" + @styleguide.user._slugs[0] +'/'+ @styleguide._slugs[0]  %>
+  <%= link_to user_styleguide_url  %>
+</p>
+
+<p>
+  <strong>Public?</strong>
+  <%= @styleguide.is_public %>
 </p>
 
 <p>
@@ -27,7 +32,7 @@
 </p>
 
 <h3>Components:</h3>
-<%= render(@components) %>
+<%= render(@styleguide.components) %>
 
 <div class="make-component">
   <h2>Add New Component</h2>
@@ -38,7 +43,7 @@
         <p>Manually add components using Quilt's online webform</p>
       </div>
       <div class="go">
-        <%= link_to "Go", new_component_path(@user, @styleguide), :class => "btn" %>
+        <%= link_to "Go", new_component_path(@styleguide.user, @styleguide), :class => "btn" %>
       </div>
     </div>
     <div class="choose">
