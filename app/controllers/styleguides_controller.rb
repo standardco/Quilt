@@ -74,7 +74,7 @@ class StyleguidesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_styleguide
-      @user = current_user
+      @user = User.find params[:user]
       @styleguide = @user.styleguides.find params[:styleguide]
     end
 
