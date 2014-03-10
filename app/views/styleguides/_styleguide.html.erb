@@ -3,7 +3,7 @@
     <% if styleguide.image_url != nil %>
     <%= image_tag(styleguide.image_url) %>
     <% end %>
-    <h4>102</h4>
+    <h4><%= styleguide.components.count %></h4>
     <p>Components</p>
   </div>
   <%= styleguide.title %>
