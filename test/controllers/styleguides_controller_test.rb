@@ -21,7 +21,7 @@ class StyleguidesControllerTest < ActionController::TestCase
       post :create, styleguide: { title: @styleguide.title, user_id: @styleguide.user_id }
     end
 
-    assert_redirected_to styleguide_path(assigns(:styleguide))
+    assert_redirected_to user_styleguide_path(assigns(:styleguide))
   end
 
   test "should show styleguide" do
@@ -36,7 +36,7 @@ class StyleguidesControllerTest < ActionController::TestCase
 
   test "should update styleguide" do
     patch :update, id: @styleguide, styleguide: { title: @styleguide.title, user_id: @styleguide.user_id }
-    assert_redirected_to styleguide_path(assigns(:styleguide))
+    assert_redirected_to user_styleguide_path(assigns(:styleguide))
   end
 
   test "should destroy styleguide" do
@@ -44,6 +44,6 @@ class StyleguidesControllerTest < ActionController::TestCase
       delete :destroy, id: @styleguide
     end
 
-    assert_redirected_to styleguides_path
+    assert_redirected_to user_styleguides_path
   end
 end

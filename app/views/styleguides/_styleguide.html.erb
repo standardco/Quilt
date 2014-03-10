@@ -8,7 +8,7 @@
   </div>
   <%= styleguide.title %>
   <%= styleguide.user.username %>
-  <%= link_to 'Show', styleguide_path(styleguide.user, styleguide) %>
+  <%= link_to 'Show', user_styleguide_path(styleguide.user, styleguide) %>
   <%= link_to 'Edit', edit_styleguide_path(styleguide.user, styleguide) %>
-  <%= link_to 'Destroy', styleguide_path(styleguide.user, styleguide), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Destroy', user_styleguide_path(styleguide.user, styleguide), method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>

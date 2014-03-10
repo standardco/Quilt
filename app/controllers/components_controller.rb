@@ -100,7 +100,7 @@ class ComponentsController < ApplicationController
   def destroy
     @component.destroy
     respond_to do |format|
-      format.html { redirect_to styleguide_path }
+      format.html { redirect_to user_styleguide_path }
       format.json { head :no_content }
     end
   end
