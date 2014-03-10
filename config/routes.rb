@@ -11,7 +11,7 @@ Quilt::Application.routes.draw do
   get '/:user/:styleguide', to: 'styleguides#show', as: :styleguide
   get '/:user/:styleguide/edit', to: 'styleguides#edit', as: :edit_styleguide
   get '/:user/styleguides/new', to: 'styleguides#new', as: :new_styleguide
-  post '/:user', to: 'styleguides#create'
+  post '/:user/styleguides', to: 'styleguides#create'
   put '/:user/:styleguide', to: 'styleguides#update'
   delete '/:user/:styleguide', to: 'styleguides#destroy'
   get '/:user/:styleguide', to: 'styleguides#show', as: :components
