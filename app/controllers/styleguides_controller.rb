@@ -29,15 +29,12 @@ class StyleguidesController < ApplicationController
   # POST /:user/styleguides
   # POST /:user/styleguides.json
   def create
-    @styleguide = Styleguide.new(styleguide_params)
     @user = current_user
-    @styleguide.user_id = @user.id
+    @styleguide = @user.styleguides.create! styleguide_params
 
     respond_to do |format|
       if @styleguide.save
-        styleguide_path = '/' + @styleguide.user._slugs[0] + '/' + @styleguide._slugs[0]
-
-        format.html { redirect_to styleguide_path, notice: 'Styleguide was successfully created.' }
+        format.html { redirect_to styleguide_path(@styleguide.user, @styleguide), notice: 'Styleguide was successfully created.' }
         format.json { render action: 'show', status: :created, location: @styleguide }
       else
         format.html { render action: 'new' }
@@ -74,7 +71,8 @@ class StyleguidesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_styleguide
       @user = current_user
-      @styleguide = Styleguide.find(params[:styleguide])
+      @styleguide = @user.styleguides.find params[:styleguide]
+      # @styleguide = Styleguide.find(params[:styleguide])
       @owner = @styleguide.user
       @components = Component.where(styleguide_id: @styleguide.id)
     end
