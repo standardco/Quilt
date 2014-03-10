@@ -51,7 +51,9 @@
     .guides .guide { width: 100%; }
 }
 
-.guides .guide .area { background: #f2f2f2;
+.guides .guide .area { 
+    background-size: cover;
+    background: #f2f2f2;
     height: 210px;
     padding: 70px 0; }
 

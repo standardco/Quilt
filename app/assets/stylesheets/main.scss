@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #666;
   font-size: 14px; 
+  -webkit-font-smoothing:antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -10,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a { color: #FF6640; }
 a:hover { text-decoration: none }
-a.muted { color: #ccc; }
+a.muted { color: #666; }
 a.muted:hover { text-decoration: underline; }
 
 
@@ -60,6 +61,8 @@ hr { background: #ccc;height: 1px;border: 0; }
   float: right;
   cursor: pointer;
 }
+
+
 
 
 
