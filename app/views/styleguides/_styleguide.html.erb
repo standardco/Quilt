@@ -1,14 +1,15 @@
 
 <div class="guide">
-  <div class="area" style="background: #f2f2f2 url(<%= styleguide.image_url %>)">
-    <% if styleguide.image_url != nil %>
+    <%= link_to user_styleguide_path(styleguide.user, styleguide), :class => "area-link" do %>
+        <div class="area" style="background-image: url(<%= styleguide.image_url %>)">
+            <% if styleguide.image_url != nil %>
+            <% end %>
+            <h4>102</h4>
+            <p>Components</p>
+        </div>
     <% end %>
-    <h4>102</h4>
-    <p>Components</p>
-  </div>
-  <%= styleguide.title %>
-  <%= styleguide.user.username %>
-  <%= link_to 'Show', user_styleguide_path(styleguide.user, styleguide) %>
-  <%= link_to 'Edit', edit_styleguide_path(styleguide.user, styleguide) %>
-  <%= link_to 'Destroy', user_styleguide_path(styleguide.user, styleguide), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= styleguide.title %>
+    <%= styleguide.user.username %>
+<!--     <%= link_to 'Edit', edit_styleguide_path(styleguide.user, styleguide) %>
+    <%= link_to 'Destroy', user_styleguide_path(styleguide.user, styleguide), method: :delete, data: { confirm: 'Are you sure?' } %> -->
 </div>
