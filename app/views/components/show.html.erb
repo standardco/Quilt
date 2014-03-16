@@ -1,16 +1,16 @@
-
+<!-- 
 <%= css_links @styleguide %>
-<%
-    content_for :styleguide_css do
+    <% content_for :styleguide_css do
         if @styleguide
             arr = @styleguide.css_paths.split(",")
             arr.each do |css_path|
     %>
-    <%= stylesheet_link_tag css_path %>
+                <%= stylesheet_link_tag css_path %>
+        <% end %>
+    <% end %>
 <% end %>
-<% end %>
-<% end %>
-
+ -->
+ 
 <% if notice %>
   <p id="notice" class="alert alert-success"><%= notice %></p>
 <% end %>
