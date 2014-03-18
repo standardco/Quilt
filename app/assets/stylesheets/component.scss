@@ -5,8 +5,10 @@
   margin:5px;
   padding:10px;
 }
-
-
+.new-component {
+    display: table;
+    width: 100%;
+}
 .make-component {
   width: 500px;
   margin: 0 auto;
@@ -89,5 +91,3 @@ pre.prettyprint {
   display: inline; }
 
 .dependency .CodeMirror { height: 34px !important;background: #fff; }
-
-
