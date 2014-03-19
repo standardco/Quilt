@@ -31,39 +31,9 @@
   <%= @styleguide.categories %>
 </p>
 
+<div class="new-component">
+  <%= link_to raw("<i class='icon icon-plus'></i>  New Component"), add_component_path(@styleguide.user, @styleguide), :class => "btn pull-left" %>
+</div>
+
 <h3>Components:</h3>
 <%= render(@styleguide.components) %>
-
-<div class="make-component">
-  <h2>Add New Component</h2>
-  <div class="box">
-    <div class="choose">
-      <div class="info">
-        <h4>Add Component Manually</h4>
-        <p>Manually add components using Quilt's online webform</p>
-      </div>
-      <div class="go">
-        <%= link_to "Go", new_component_path(@styleguide.user, @styleguide), :class => "btn" %>
-      </div>
-    </div>
-    <div class="choose">
-      <div class="info">
-        <h4>Upload Quilt Sheet</h4>
-        <p>Bulk Add Components by uploading a Quilt Sheet. Read More about <a href="#">quilt tags</a></p>
-      </div>
-      <div class="go">
-        <a class="btn">Go</a>
-      </div>
-    </div>
-    <div class="choose">
-      <div class="info">
-        <h4>Integrate with GitHub Repo</h4>
-        <p>Scan your git repo for components living in the wild. Read More about <a href="#">GitHub integration</a></p>
-      </div>
-      <div class="go">
-        coming soon
-      </div>
-    </div>
-  </div>
-
-</div>
