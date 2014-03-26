@@ -10,40 +10,32 @@
     <% end %>
 <% end %>
  -->
+<section class="guideheader">
+    <%= link_to raw("<i class='icon icon-plus'></i>  New Component"), add_component_path(@styleguide.user, @styleguide), :class => "btn pull-right" %>
+    <h1><%= @styleguide.title %></h1>
+    <ul class="sg_nav">
+        <li><a class="active" title="Components" href="styleguide_admin.html"><i class="icon-components"></i></a></li>
+        <li><a title="Settings" href="styleguide_settings.html"><i class="icon-settings"></i></a></li>
+        <li><a title="Launch" target="_blank" href="styleguide_public.html"><i class="icon-launch"></i></a></li>
+    </ul>
+</section>
  
 <% if notice %>
   <p id="notice" class="alert alert-success"><%= notice %></p>
 <% end %>
 
-<h3><%= @component.title %></h3>
-<hr>
-<p><%= @component.description %></p>
-<div class="codeline">
-    <div class="pull-left">
-        <div class="tags">
-            <a href="">Tag</a>,
-            <a href="">Tag</a>,
-            <a href="">Tag</a>
-        </div>
-    </div>
-    <div class="pull-left">
-        <a href="" class="code" data-id="one"><i class="icon-newspaper"></i></a>
-        <a href="#">
-            <i class="icon-pen"></i>
-        </a>
-        <a href=""><i class="icon-cancel_circle"></i></a>
-    </div>
-</div>
-<div class="pull-left">
-    <strong>Dependencies:</strong>
-    <%= @component.dependencies %>
-    <pre class="prettyprint prettyprinted" >
+<section class="main">
+
+    <article class="component_item">
+      <h2><%= @component.title %></h2>
+      <p><%= @component.description %></p>
+
+      <div class="component_rendered alert alert-info">
+        <%= @component.dependencies %>
         <%= @component.code %>
-    </pre>
-    <p>
-      <strong>Notes:</strong>
-      <%= @component.notes %>
-    </p>
-</div>
-<br><br>
+      </div>
+      <span><%= @component.notes %></span>
+    </article>  
+
+</section>
 <%= link_to 'Back', user_styleguide_path(@styleguide.user, @styleguide) %>
