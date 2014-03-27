@@ -1,27 +1,4 @@
-<div class="component">
-  <p>
-    <strong>Title:</strong>
-    <%= component.title %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= component.description %>
-  </p>
-  <p>
-    <strong>Notes:</strong>
-    <%= component.notes %>
-  </p>
-  <p>
-    <strong>Dependencies</strong>
-    <%= component.dependencies %>
-  </p>
-  <p>
-    <strong>Code</strong>
-    <%= component.code %>
-  </p>
-  <p>
-    <%= link_to 'Show', component_path(component.styleguide.user, component.styleguide, component) %>
-    <%= link_to 'Edit', edit_component_path(component.styleguide.user, component.styleguide, component) %>
-    <%= link_to 'Destroy', component_path(component.styleguide.user, component.styleguide, component), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </p>
-</div>
+
+<iframe src="<%=component_path(component.styleguide.user, component.styleguide, component) %>" width="740"
+        frameborder="0" scrolling="no" height="400" id="iframe">
+

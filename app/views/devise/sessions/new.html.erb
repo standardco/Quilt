@@ -4,9 +4,9 @@
     		<%= link_to "Forgot your password?", new_password_path(resource_name) %>
     	</div>
 		<h2>Login</h2>
-        <%= link_to raw("<i class='icon icon-github'></i>Sign in with Github"), user_omniauth_authorize_path(:github), :class => 'btn github' %>
+        <!-- hidden by TJM until I can get this workinglink_to raw("<i class='icon icon-github'></i>Sign in with Github"), user_omniauth_authorize_path(:github), :class => 'btn github'
         <hr>
-        <div class="or">OR</div>
+        <div class="or">OR</div>-->
 		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<div class="form-group">
 					<%= f.email_field :email, :autofocus => true, :placeholder => 'Email' %>

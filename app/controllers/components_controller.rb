@@ -7,6 +7,7 @@ class ComponentsController < ApplicationController
   # GET /:user/:styleguide/:component
   # GET /:user/:styleguide/:component.json
   def show
+    render :layout => 'headerless'
   end
 
   def
