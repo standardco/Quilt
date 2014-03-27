@@ -2,68 +2,25 @@
   <p id="notice" class="alert alert-success"><%= notice %></p>
 <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @styleguide.title %>
-</p>
-
-<p>
-  <strong>User:</strong>
+<!--
   <%= @styleguide.user.username %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= link_to user_styleguide_url  %>
-</p>
-
-<p>
-  <strong>Public?</strong>
-  <%= @styleguide.is_public %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @styleguide.description %>
-</p>
-<p>
-  <strong>Categories:</strong>
   <%= @styleguide.categories %>
-</p>
-
-<h3>Components:</h3>
-<%= render(@styleguide.components) %>
-
-<div class="make-component">
-  <h2>Add New Component</h2>
-  <div class="box">
-    <div class="choose">
-      <div class="info">
-        <h4>Add Component Manually</h4>
-        <p>Manually add components using Quilt's online webform</p>
-      </div>
-      <div class="go">
-        <%= link_to "Go", new_component_path(@styleguide.user, @styleguide), :class => "btn" %>
-      </div>
-    </div>
-    <div class="choose">
-      <div class="info">
-        <h4>Upload Quilt Sheet</h4>
-        <p>Bulk Add Components by uploading a Quilt Sheet. Read More about <a href="#">quilt tags</a></p>
-      </div>
-      <div class="go">
-        <a class="btn">Go</a>
-      </div>
-    </div>
-    <div class="choose">
-      <div class="info">
-        <h4>Integrate with GitHub Repo</h4>
-        <p>Scan your git repo for components living in the wild. Read More about <a href="#">GitHub integration</a></p>
-      </div>
-      <div class="go">
-        coming soon
-      </div>
-    </div>
-  </div>
-
-</div>
+  <%= @styleguide.is_public %>
+  <%= link_to user_styleguide_url  %>
+-->
+  <!-- Styleguide Nav -->
+  <section class="guideheader">
+    <%= link_to raw("<i class='icon icon-plus'></i>  New Component"), add_component_path(@styleguide.user, @styleguide), :class => "btn pull-right" %>
+    <h1><%= @styleguide.title %></h1>
+    <ul class="sg_nav">
+      <li>
+        <%= link_to edit_styleguide_path(@styleguide.user, @styleguide) do %>
+          <i class="icon-components"></i>
+        <% end %>
+      </li>
+      <li><a title="Settings" href=""><i class="icon-settings"></i></a></li>
+      <li><a title="Launch" target="_blank" href="styleguide_public.html"><i class="icon-launch"></i></a></li>
+    </ul>
+    <p><%= @styleguide.description %></p>
+</section>
+  <%= render(@styleguide.components) %>

@@ -1,5 +1,5 @@
 class StyleguidesController < ApplicationController
-  before_action :set_styleguide, only: [:show, :edit, :update, :destroy]
+  before_action :set_styleguide, only: [:show, :edit, :update, :destroy, :add_component]
   before_filter :authenticate_user!
 
   # GET /:user
@@ -37,7 +37,7 @@ class StyleguidesController < ApplicationController
 
     respond_to do |format|
       if @styleguide.save
-        format.html { redirect_to user_styleguide_path(@styleguide.user, @styleguide), notice: 'Styleguide was successfully created.' }
+        format.html { redirect_to add_component_path(@styleguide.user, @styleguide), notice: 'The styleguide was successfully created. Now, let\'s add some components!' }
         format.json { render action: 'show', status: :created, location: @styleguide }
       else
         format.html { render action: 'new' }
@@ -68,6 +68,11 @@ class StyleguidesController < ApplicationController
       format.html { redirect_to user_styleguides_url }
       format.json { head :no_content }
     end
+  end
+
+  # GET /:user/:styleguide/add-component
+  def add_component
+
   end
 
   private

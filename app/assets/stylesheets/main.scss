@@ -25,6 +25,7 @@ hr { background: #ccc;height: 1px;border: 0; }
 .element { padding: 40px 0;}
 
 .main {
+  margin-bottom: 50px;
   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);
   -moz-transition: -moz-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);
   -o-transition: -o-transform 0.25s cubic-bezier(0.2, 0.3, 0.25, 0.9);
