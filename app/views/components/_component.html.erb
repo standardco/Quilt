@@ -1,5 +1,33 @@
+<hr>
 
-<iframe src="<%=component_path(component.styleguide.user, component.styleguide, component) %>" width="740"
-        frameborder="0" scrolling="no" height="400" id="iframe">
+<section class="main">
+
+    <article class="component_item">
+      <ul class="component_actions">
+        <li class="component_delete">
+          <%= link_to component_path(component.styleguide.user, component.styleguide, component) do %>
+            <i class="icon-launch"></i>
+          <% end %>
+        </li>
+      </ul>
+      <h2><%= component.title %></h2>
+      <p><%= component.description %></p>
+
+      <div class="component_rendered alert alert-info">
+        <%= component.dependencies %>
+        <%= component.code %>
+      </div>
+      <span><%= component.notes %></span>
+    </article>  
+
+</section>
+
+<!-- 
+    
+    <%= link_to 'Edit', edit_component_path(component.styleguide.user, component.styleguide, component) %>
+    <%= link_to 'Destroy', component_path(component.styleguide.user, component.styleguide, component), method: :delete, data: { confirm: 'Are you sure?' } %>
+-->
+<!-- 
+<iframe src="<%=component_path(component.styleguide.user, component.styleguide, component) %>" width="740" frameborder="0" scrolling="no" height="400" id="iframe"> -->
 
 
