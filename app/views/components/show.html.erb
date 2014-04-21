@@ -1,15 +1,4 @@
-<!-- 
-<%= css_links @styleguide %>
-    <% content_for :styleguide_css do
-        if @styleguide
-            arr = @styleguide.css_paths.split(",")
-            arr.each do |css_path|
-    %>
-                <%= stylesheet_link_tag css_path %>
-        <% end %>
-    <% end %>
-<% end %>
- -->
+
 <section class="guideheader">
     <%= link_to raw("<i class='icon icon-plus'></i>  New Component"), add_component_path(@styleguide.user, @styleguide), :class => "btn pull-right" %>
     <h1><%= @styleguide.title %></h1>
@@ -24,18 +13,7 @@
   <p id="notice" class="alert alert-success"><%= notice %></p>
 <% end %>
 
-<section class="main">
+<%= render(@component) %>
 
-    <article class="component_item">
-      <h2><%= @component.title %></h2>
-      <p><%= @component.description %></p>
-
-      <div class="component_rendered alert alert-info">
-        <%= @component.dependencies %>
-        <%= @component.code %>
-      </div>
-      <span><%= @component.notes %></span>
-    </article>  
-
-</section>
 <%= link_to 'Back', user_styleguide_path(@styleguide.user, @styleguide) %>
+

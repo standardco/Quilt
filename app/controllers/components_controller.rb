@@ -1,16 +1,20 @@
 require 'open-uri'
 
 class ComponentsController < ApplicationController
-  before_action :set_component, only: [:show, :edit, :update, :destroy]
+  before_action :set_component, only: [:show, :edit, :update, :destroy, :iframe]
   before_filter :authenticate_user!
 
   # GET /:user/:styleguide/:component
   # GET /:user/:styleguide/:component.json
   def show
-    render :layout => 'headerless'
+    
   end
 
-  def
+
+
+  def iframe
+    render :layout => 'headerless'
+  end
 
   # GET /:user/:styleguide/components/upload
   def upload

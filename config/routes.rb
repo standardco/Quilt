@@ -18,6 +18,8 @@ Quilt::Application.routes.draw do
   delete '/:user/:styleguide', to: 'styleguides#destroy'
   get '/:user/:styleguide', to: 'styleguides#show', as: :components
   get '/:user/:styleguide/:component', to: 'components#show', as: :component
+  get '/:user/:styleguide/:component/iframe', to: 'components#iframe', as: :component_iframe
+
   get '/:user/:styleguide/:component/edit', to: 'components#edit', as: :edit_component
   get '/:user/:styleguide/components/new', to: 'components#new', as: :new_component
   post '/:user/:styleguide', to: 'components#create'

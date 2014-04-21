@@ -1,7 +1,6 @@
-<hr>
+
 
 <section class="main">
-
     <article class="component_item">
       <ul class="component_actions">
         <li class="component_delete">
@@ -15,7 +14,7 @@
 
       <div class="component_rendered alert alert-info">
         <%= component.dependencies %>
-        <%= component.code %>
+        <iframe src="<%=component_iframe_path(component.styleguide.user, component.styleguide, component) %>" width="740" frameborder="0" scrolling="no" id="iframe">
       </div>
       <span><%= component.notes %></span>
     </article>  
@@ -27,7 +26,7 @@
     <%= link_to 'Edit', edit_component_path(component.styleguide.user, component.styleguide, component) %>
     <%= link_to 'Destroy', component_path(component.styleguide.user, component.styleguide, component), method: :delete, data: { confirm: 'Are you sure?' } %>
 -->
-<!-- 
-<iframe src="<%=component_path(component.styleguide.user, component.styleguide, component) %>" width="740" frameborder="0" scrolling="no" height="400" id="iframe"> -->
+
+<!--<iframe src="<%=component_path(component.styleguide.user, component.styleguide, component) %>" width="740" frameborder="0" scrolling="no" height="400" id="iframe">-->
 
 
